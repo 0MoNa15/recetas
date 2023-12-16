@@ -1,0 +1,86 @@
+ext {
+    ktx_version = "1.9.0"
+    material_version = "1.8.0"
+    junit_version = "4.13.2"
+
+    coreTesting_version = "2.2.0"
+    roboelectric_version = "4.5.1"
+    mockito_version = "5.1.1"
+    coroutines_version = "1.6.4"
+    extTest_version = "1.1.5"
+    expressoTest_version = "3.5.1"
+    runnerTest_version = "1.5.2"
+    rulesTest_version = "1.5.0"
+
+    hilt_version = "2.44"
+    viewmodel_life_version = "1.0.0"
+    hiltNavigationCompose_version = "1.1.0-alpha01"
+
+    viewModelKtx_version = "2.6.1"
+    lifecycleKtx_version = "2.6.1"
+    activityKtx_version = "1.7.0"
+    fragmentKtx_version = "1.5.6"
+
+    coil_version = "1.4.0"
+    accompanist_version = "0.10.0"
+
+    okhttp_version = "5.0.0-alpha.10"
+    retrofit_version = "2.9.0"
+
+    navigationCompose_version = "2.6.0-alpha08"
+
+    activityCompose_version = "1.7.0"
+
+    modelmapper_version = "3.1.0"
+
+    ktx = "androidx.core:core-ktx:$ktx_version"
+    material = "com.google.android.material:material:$material_version"
+
+    // Dependency Injection
+    hiltDi = "com.google.dagger:hilt-android:$hilt_version"
+    hiltCompiler = "com.google.dagger:hilt-android-compiler:$hilt_version"
+    hiltCompilerViewModel = "androidx.hilt:hilt-compiler:$viewmodel_life_version"
+    hiltNavigationCompose = "androidx.hilt:hilt-navigation-compose:$hiltNavigationCompose_version"
+
+    // Retrofit
+    okhttp = "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
+    retrofit = "com.squareup.retrofit2:retrofit:$retrofit_version"
+    gson = "com.squareup.retrofit2:converter-gson:$retrofit_version"
+
+    // Test
+    junit =  "junit:junit:$junit_version"
+    coreTesting = "androidx.arch.core:core-testing:$coreTesting_version"
+    roboelectric = "org.robolectric:robolectric:$roboelectric_version"
+    mockito = "org.mockito:mockito-inline:$mockito_version"
+    coroutinesTest = "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutines_version"
+    extTest = "androidx.test.ext:junit:$extTest_version"
+    expressoTest = "androidx.test.espresso:espresso-core:$expressoTest_version"
+    runnerTest = "androidx.test:runner:$runnerTest_version"
+    rulesTest = "androidx.test:rules:$rulesTest_version"
+
+    // Coil
+    coil = "io.coil-kt:coil:$coil_version"
+    accompanist = "com.google.accompanist:accompanist-coil:$accompanist_version"
+
+    // Mapper
+    modelmapper = "org.modelmapper:modelmapper:$modelmapper_version"
+
+    // Coroutines
+    coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
+
+    // Compose
+    composeUi = "androidx.compose.ui:ui:$compose_ui_version"
+    composeMaterial = "androidx.compose.material:material:$compose_ui_version"
+    composeUiPreview = "androidx.compose.ui:ui-tooling-preview:$compose_ui_version"
+    navigationCompose = "androidx.navigation:navigation-compose:$navigationCompose_version"
+    composeTest = "androidx.compose.ui:ui-test-junit4:$compose_ui_version"
+    composeDebug = "androidx.compose.ui:ui-tooling:$compose_ui_version"
+    composeTestManifest = "androidx.compose.ui:ui-test-manifest:$compose_ui_version"
+    activityCompose = "androidx.activity:activity-compose:$activityCompose_version"
+
+    // ViewModel
+    viewModelKtx =  "androidx.lifecycle:lifecycle-viewmodel-ktx:$viewModelKtx_version"
+    lifecycleKtx =  "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycleKtx_version"
+    activityKtx =  "androidx.activity:activity-ktx:$activityKtx_version"
+    fragmentKtx =  "androidx.fragment:fragment-ktx:$fragmentKtx_version"
+}
