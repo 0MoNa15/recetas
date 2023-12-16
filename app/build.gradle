@@ -50,6 +50,9 @@ android {
 }
 
 dependencies {
+    implementation project(':domain')
+    implementation project(':infraestructure')
+
     // Compose
     implementation composeUi
     implementation composeMaterial

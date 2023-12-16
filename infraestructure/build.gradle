@@ -37,6 +37,8 @@ android {
 
 dependencies {
 
+    implementation project(':domain')
+
     // Dependency Injection
     api hiltDi
     kapt hiltCompiler
