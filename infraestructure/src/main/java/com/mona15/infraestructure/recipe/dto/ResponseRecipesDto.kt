@@ -6,5 +6,5 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class ResponseRecipesDto(
-    @SerializedName("recetas") val recetas: List<RecipeDto>
+    @SerializedName("recetas") val recipes: List<RecipeDto>
 ) : Parcelable
