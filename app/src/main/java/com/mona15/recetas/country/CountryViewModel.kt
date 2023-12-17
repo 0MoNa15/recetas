@@ -15,7 +15,10 @@ class CountryViewModel @Inject constructor(
     fun getCountries() {
         viewModelScope.launch {
             try {
-                getAllCountriesUseCase.invoke().collect { countries -> }
+                getAllCountriesUseCase.invoke().collect { countries ->
+                    println(countries)
+
+                }
             } catch (e: Exception) {
                 println(e.message)
             }
