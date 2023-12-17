@@ -22,11 +22,20 @@ class RecipeRetrofitRepository(private val recipeApi: RecipeApi) : RecipeReposit
     }
 
     override fun getRecipesByCountry(nameCountry: String): Flow<List<Recipe>> {
-        TODO("Not yet implemented")
+        return flow { emit(recipeApi.getRecipesByCountry(nameCountry)) }
+            .catch {
+                throw NoDataRecipeException()
+            }.map {
+                Mapper.convert(it.recipes)
+            }
     }
 
     override fun getRecipeDetail(recipeId: String): Flow<RecipeDetail> {
-        TODO("Not yet implemented")
+        return flow { emit(recipeApi.getRecipeDetail(recipeId)) }
+            .catch {
+                throw NoDataRecipeException()
+            }.map {
+                Mapper.convert(it)
+            }
     }
-
 }
