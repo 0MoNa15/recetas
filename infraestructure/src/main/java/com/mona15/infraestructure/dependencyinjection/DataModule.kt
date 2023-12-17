@@ -1,10 +1,10 @@
 package com.mona15.infraestructure.dependencyinjection
 
 import com.mona15.infraestructure.country.api.CountryApi
-import com.mona15.infraestructure.country.repository.CountryRepository
+import com.mona15.domain.country.repository.CountryRepository
 import com.mona15.infraestructure.country.repository.CountryRetrofitRepository
 import com.mona15.infraestructure.recipe.api.RecipeApi
-import com.mona15.infraestructure.recipe.repository.RecipeRepository
+import com.mona15.domain.recipe.repository.RecipeRepository
 import com.mona15.infraestructure.recipe.repository.RecipeRetrofitRepository
 import dagger.Module
 import dagger.Provides
