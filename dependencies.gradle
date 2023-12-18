@@ -21,8 +21,7 @@ ext {
     activityKtx_version = "1.7.0"
     fragmentKtx_version = "1.5.6"
 
-    coil_version = "1.4.0"
-    accompanist_version = "0.10.0"
+    coil_version = "2.5.0"
 
     okhttp_version = "5.0.0-alpha.10"
     retrofit_version = "2.9.0"
@@ -59,8 +58,7 @@ ext {
     rulesTest = "androidx.test:rules:$rulesTest_version"
 
     // Coil
-    coil = "io.coil-kt:coil:$coil_version"
-    accompanist = "com.google.accompanist:accompanist-coil:$accompanist_version"
+    coil = "io.coil-kt:coil-compose:$coil_version"
 
     // Mapper
     modelmapper = "org.modelmapper:modelmapper:$modelmapper_version"

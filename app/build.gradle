@@ -8,12 +8,12 @@ plugins {
 
 android {
     namespace 'com.mona15.recetas'
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.mona15.recetas"
         minSdk 24
-        targetSdk 33
+        targetSdk 34
         versionCode 1
         versionName "1.0"
 
@@ -76,4 +76,7 @@ dependencies {
     androidTestImplementation expressoTest
     androidTestImplementation composeTest
     debugImplementation composeTestManifest
+
+    // Coil
+    implementation coil
 }
