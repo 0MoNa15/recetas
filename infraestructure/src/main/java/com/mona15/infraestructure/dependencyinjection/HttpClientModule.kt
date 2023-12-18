@@ -11,7 +11,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
-private const val BASE_URL = "http://demo3790638.mockable.io/"
+private const val BASE_URL = "https://demo3790638.mockable.io/"
 
 @Module
 @InstallIn(SingletonComponent::class)
