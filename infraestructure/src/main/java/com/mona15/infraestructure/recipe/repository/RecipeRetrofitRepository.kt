@@ -5,6 +5,7 @@ import com.mona15.domain.recipe.model.Recipe
 import com.mona15.domain.recipe.model.RecipeDetail
 import com.mona15.domain.recipe.repository.RecipeRepository
 import com.mona15.infraestructure.anticorruption.Mapper
+import com.mona15.infraestructure.recipe.anticorruption.RecipeTranslate
 import com.mona15.infraestructure.recipe.api.RecipeApi
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
@@ -17,7 +18,7 @@ class RecipeRetrofitRepository(private val recipeApi: RecipeApi) : RecipeReposit
             .catch {
                 throw NoDataRecipeException()
             }.map {
-                Mapper.convert(it.recipes)
+                RecipeTranslate.mapRecipesDtoToDomain(it.recipes)
             }
     }
 
