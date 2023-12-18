@@ -5,6 +5,8 @@ import androidx.lifecycle.viewModelScope
 import com.mona15.domain.recipe.usecases.GetAllRecipesUseCase
 import com.mona15.domain.recipe.usecases.GetRecipesByCountryUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -14,6 +16,14 @@ class RecipeListViewModel @Inject constructor(
     private val getRecipesByCountryUseCase: GetRecipesByCountryUseCase
 ) : ViewModel() {
 
+    private val loading = MutableStateFlow(RecipeListUiState().loading)
+    private val success = MutableStateFlow(RecipeListUiState().success)
+    private val error = MutableStateFlow(RecipeListUiState().error)
+    private val message = MutableStateFlow(RecipeListUiState().message)
+
+    private val _uiState = MutableStateFlow(RecipeListUiState())
+    val uiState: StateFlow<RecipeListUiState> get() = _uiState
+    
     fun getAllRecipes() {
         viewModelScope.launch {
             try {
