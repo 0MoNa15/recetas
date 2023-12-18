@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Recetas</string>
+    <string name="no_data_description">No hay datos</string>
 </resources>

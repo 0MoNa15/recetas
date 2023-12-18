@@ -31,22 +31,21 @@ fun RecipeListScreen(
     viewModel: RecipeListViewModel = hiltViewModel()
 ) {
     val uiState = viewModel.uiState.collectAsState()
-    var searchTerm by remember { mutableStateOf("") }
 
-    //viewModel.getAllRecipes()
+    viewModel.getAllRecipes()
 
-    val recipes = listOf(
+    /*val recipes = listOf(
         Recipe("1", "Ajiaco", listOf("Harina", "Azúcar", "Huevos", "Levadura", "Sal"), "https://i.ibb.co/smHpRvH/rocoto-relleno.jpg"),
         Recipe("2", "Tamal", listOf("Harina", "Azúcar", "Dulce", "Levadura", "Sal"), "https://i.ibb.co/smHpRvH/rocoto-relleno.jpg"),
         Recipe("3", "Ajiaco", listOf("Harina", "Azúcar", "Huevos", "Levadura", "Sal"), "https://i.ibb.co/smHpRvH/rocoto-relleno.jpg"),
         // Agrega más recetas según sea necesario
-    )
+    )*/
 
     Surface(Modifier.fillMaxSize()) {
         RecipeListContent(
             loading = uiState.value.loading,
-            recipes = recipes,
-            //recipes = uiState.value.success,
+            //recipes = recipes,
+            recipes = uiState.value.success,
             error = uiState.value.error
         )
     }
@@ -92,13 +91,12 @@ fun RecipeListContent(
             FieldSearch(search)
 
             if (loading) {
-                //RecipeListPreview()
+                WaitingRecipesList()
             } else {
                 if (error) {
-                    //NoDataScreen()
+                    NoDataScreen()
                 } else {
                     RecipeListView(
-                        //recipes = recipes
                         recipes = recipesFilter
                     )
                 }
