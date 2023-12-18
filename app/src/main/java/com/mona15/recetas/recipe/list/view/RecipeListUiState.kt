@@ -1,4 +1,4 @@
-package com.mona15.recetas.recipe.list
+package com.mona15.recetas.recipe.list.view
 
 import com.mona15.domain.recipe.model.Recipe
 
