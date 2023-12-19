@@ -2,4 +2,17 @@
     <string name="app_name">Recetas</string>
     <string name="no_data_description">No hay datos</string>
     <string name="search_recipe">Buscar receta por nombre o ingrediente</string>
+    <string name="informaci_n_nutricional">Información Nutricional</string>
+    <string name="calor_as">Calorías</string>
+    <string name="prote_nas">Proteínas</string>
+    <string name="grasas">Grasas</string>
+    <string name="carbohidratos">Carbohidratos</string>
+    <string name="preparaci_n">Preparación</string>
+    <string name="ingredientes">Ingredientes</string>
+    <string name="detalles_de_la_receta">Detalles de la Receta</string>
+    <string name="tiempo_de_preparaci_n">Tiempo de Preparación</string>
+    <string name="dificultad">Dificultad</string>
+    <string name="porciones">Porciones</string>
+    <string name="ver_lugar_de_origen">Ver lugar de origen</string>
+    <string name="min">%1$s min</string>
 </resources>
