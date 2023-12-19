@@ -9,6 +9,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.dimensionResource
+import androidx.compose.ui.res.stringResource
+import com.mona15.recetas.R
 
 @Composable
 fun EmptyListView(callToAction: () -> Unit = {}) {
@@ -16,18 +18,17 @@ fun EmptyListView(callToAction: () -> Unit = {}) {
         modifier = Modifier
             .fillMaxWidth()
             .fillMaxHeight()
-            .padding(dimensionResource(id = com.mona15.recetas.R.dimen.padding_double)),
+            .padding(dimensionResource(id = R.dimen.padding_double)),
         verticalArrangement = Arrangement.Center
     ) {
-        val emptyListText = "Lista vacia"
+        val emptyListText = stringResource(R.string.no_se_ha_ecnontrado_receta)
         Text(
             text = emptyListText,
             style = MaterialTheme.typography.h4,
             modifier = Modifier
                 .align(Alignment.CenterHorizontally)
-                .testTag("titleEmptyList")
         )
-        val reloadText = "Re-cargar"
+        val reloadText = stringResource(R.string.recargar_las_recetas)
         Button(
             onClick = callToAction,
             modifier = Modifier.align(Alignment.CenterHorizontally)
