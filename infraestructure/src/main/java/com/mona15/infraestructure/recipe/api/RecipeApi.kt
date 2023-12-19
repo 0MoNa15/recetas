@@ -23,6 +23,6 @@ interface RecipeApi {
 
     @GET(RECIPE_DETAIL_PATH)
     suspend fun getRecipeDetail(
-        @Path(PATH_ID_RECIPE) countryId: String = PATH_ID_RECIPE
+        @Path(PATH_ID_RECIPE) recipeId: String = PATH_ID_RECIPE
     ): ResponseRecipeDetailDto
 }

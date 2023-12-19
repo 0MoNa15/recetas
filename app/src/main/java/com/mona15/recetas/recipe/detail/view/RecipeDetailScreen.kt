@@ -17,9 +17,8 @@ fun RecipeDetailScreen(
     navigateToLocationMapScreen: (location: Location) -> Unit,
     recipeDetailViewModel: RecipeDetailViewModel = hiltViewModel()
 ) {
-    recipeDetailViewModel.getRecipe(recipeId)
-
     val uiState by recipeDetailViewModel.uiState.collectAsState()
+    recipeDetailViewModel.getRecipe(recipeId)
 
     Surface(Modifier.fillMaxSize()) {
         RecipeDetailContent(
