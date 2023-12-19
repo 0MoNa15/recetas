@@ -70,8 +70,7 @@ fun RecipeCard(
                                 Color.Transparent,
                                 Color.DarkGray
                             ),
-                            startY = 100f,
-                            //endY = 0.1f
+                            startY = 100f
                         )
                     )
             ) {
