@@ -31,7 +31,7 @@ import com.mona15.recetas.recipe.list.viewmodel.RecipeListViewModel
 
 @Composable
 fun RecipeListScreen(
-    navigateToDetailRecipeScreen: (recipeId: Int) -> Unit,
+    navigateToDetailRecipeScreen: (recipeId: String) -> Unit,
     viewModel: RecipeListViewModel = hiltViewModel()
 ) {
     val uiState = viewModel.uiState.collectAsState()
@@ -50,7 +50,8 @@ fun RecipeListScreen(
             loading = uiState.value.loading,
             //recipes = recipes,
             recipes = uiState.value.success,
-            error = uiState.value.error
+            error = uiState.value.error,
+            navigateToDetailRecipeScreen = navigateToDetailRecipeScreen
         )
     }
 }
@@ -59,7 +60,8 @@ fun RecipeListScreen(
 fun RecipeListContent(
     recipes: List<Recipe>,
     loading: Boolean,
-    error: Boolean
+    error: Boolean,
+    navigateToDetailRecipeScreen: (recipeId: String) -> Unit,
 ) {
     Column {
         Column(
@@ -105,7 +107,8 @@ fun RecipeListContent(
                     NoDataScreen()
                 } else {
                     RecipeListView(
-                        recipes = recipesFilter
+                        recipes = recipesFilter,
+                        navigateToDetailRecipeScreen = navigateToDetailRecipeScreen
                     )
                 }
             }

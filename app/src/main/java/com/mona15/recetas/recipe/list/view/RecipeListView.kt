@@ -27,7 +27,10 @@ import com.mona15.domain.recipe.model.Recipe
 import com.mona15.recetas.R
 
 @Composable
-fun RecipeListView(recipes: List<Recipe>) {
+fun RecipeListView(
+    recipes: List<Recipe>,
+    navigateToDetailRecipeScreen: (recipeId: String) -> Unit,
+) {
     if (recipes.isEmpty()) {
         EmptyListView()
     } else {
@@ -36,7 +39,9 @@ fun RecipeListView(recipes: List<Recipe>) {
             verticalArrangement = Arrangement.Center,
         ) {
             itemsIndexed(recipes) { _, item ->
-                RecipeCard(recipe = item)
+                RecipeCard(
+                    recipe = item,
+                    navigateToDetailRecipeScreen = navigateToDetailRecipeScreen)
             }
         }
     }
@@ -45,12 +50,13 @@ fun RecipeListView(recipes: List<Recipe>) {
 @Composable
 fun RecipeCard(
     recipe: Recipe,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    navigateToDetailRecipeScreen: (recipeId: String) -> Unit,
 ) {
     Card(
         modifier = modifier
             .clickable {
-                println("Clicccccccccccccccccccccccccccccccccccccccccccccccc en ${recipe.name}")
+                navigateToDetailRecipeScreen.invoke(recipe.id)
             }
             .fillMaxWidth()
             .padding(dimensionResource(id = R.dimen.padding_double)),

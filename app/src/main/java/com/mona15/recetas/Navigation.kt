@@ -12,9 +12,9 @@ import com.mona15.recetas.recipe.list.view.RecipeListScreen
 
 private const val RECIPE_LIST_SCREEN_ROUTE = "recipe_list_screen"
 private const val RECIPE_DETAIL_SCREEN_ROUTE = "recipe_detail_screen"
-private const val LOCATION_MAP_SCREEN_ROUTE = "recipe_detail_screen"
+private const val LOCATION_MAP_SCREEN_ROUTE = "location_map_screen"
 private const val RECIPE_ID_ARGUMENT = "recipe_id"
-private const val LOCATION_ARGUMENT = "ubicacion"
+private const val LOCATION_ARGUMENT = "location"
 
 @Composable
 fun Navigation() {
@@ -32,11 +32,12 @@ fun Navigation() {
         }
 
         composable("${RECIPE_DETAIL_SCREEN_ROUTE}/{${RECIPE_ID_ARGUMENT}}",
-            arguments = listOf(
+            /*arguments = listOf(
                 navArgument(RECIPE_ID_ARGUMENT) {
                     type = NavType.IntType
                 }
-            )) {
+            )*/
+            ) {
 
             val recipeId = remember {
                 it.arguments?.getString(RECIPE_ID_ARGUMENT)
