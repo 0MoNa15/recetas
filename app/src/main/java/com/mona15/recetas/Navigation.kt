@@ -31,14 +31,7 @@ fun Navigation() {
             )
         }
 
-        composable("${RECIPE_DETAIL_SCREEN_ROUTE}/{${RECIPE_ID_ARGUMENT}}",
-            /*arguments = listOf(
-                navArgument(RECIPE_ID_ARGUMENT) {
-                    type = NavType.IntType
-                }
-            )*/
-            ) {
-
+        composable("${RECIPE_DETAIL_SCREEN_ROUTE}/{${RECIPE_ID_ARGUMENT}}") {
             val recipeId = remember {
                 it.arguments?.getString(RECIPE_ID_ARGUMENT)
             }
