@@ -1,9 +1,10 @@
-package com.mona15.recetas.recipe.detail
+package com.mona15.recetas.recipe.detail.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.mona15.domain.recipe.exceptions.NoDataRecipeException
 import com.mona15.domain.recipe.usecases.GetRecipeDetailUseCase
+import com.mona15.recetas.recipe.detail.view.state.RecipeDetailUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

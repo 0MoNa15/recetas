@@ -12,7 +12,7 @@ import com.mona15.domain.recipe.model.Ingredient
 import com.mona15.domain.recipe.model.Location
 import com.mona15.domain.recipe.model.Macronutrient
 import com.mona15.domain.recipe.model.RecipeDetail
-import com.mona15.recetas.recipe.detail.RecipeDetailViewModel
+import com.mona15.recetas.recipe.detail.viewmodel.RecipeDetailViewModel
 
 @Composable
 fun RecipeDetailScreen(

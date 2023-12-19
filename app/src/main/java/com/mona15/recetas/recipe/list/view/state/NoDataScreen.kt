@@ -1,4 +1,4 @@
-package com.mona15.recetas.recipe.list.view
+package com.mona15.recetas.recipe.list.view.state
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.fillMaxSize

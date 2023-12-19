@@ -5,7 +5,7 @@ import androidx.lifecycle.viewModelScope
 import com.mona15.domain.recipe.exceptions.NoDataRecipeException
 import com.mona15.domain.recipe.usecases.GetAllRecipesUseCase
 import com.mona15.domain.recipe.usecases.GetRecipesByCountryUseCase
-import com.mona15.recetas.recipe.list.view.RecipeListUiState
+import com.mona15.recetas.recipe.list.view.state.RecipeListUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
