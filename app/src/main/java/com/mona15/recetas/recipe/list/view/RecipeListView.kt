@@ -1,6 +1,7 @@
 package com.mona15.recetas.recipe.list.view
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
@@ -48,6 +49,9 @@ fun RecipeCard(
 ) {
     Card(
         modifier = modifier
+            .clickable {
+                println("Clicccccccccccccccccccccccccccccccccccccccccccccccc en ${recipe.name}")
+            }
             .fillMaxWidth()
             .padding(dimensionResource(id = R.dimen.padding_double)),
         shape = RoundedCornerShape(dimensionResource(id = R.dimen.card_corner)),

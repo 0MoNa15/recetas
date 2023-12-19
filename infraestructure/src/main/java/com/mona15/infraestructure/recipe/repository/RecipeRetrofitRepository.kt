@@ -31,12 +31,16 @@ class RecipeRetrofitRepository(private val recipeApi: RecipeApi) : RecipeReposit
             }
     }
 
-    override fun getRecipeDetail(recipeId: String): Flow<RecipeDetail> {
-        return flow { emit(recipeApi.getRecipeDetail(recipeId)) }
-            .catch {
-                throw NoDataRecipeException()
-            }.map {
-                Mapper.convert(it)
-            }
+    override fun getRecipeDetail(recipeId: String?): Flow<RecipeDetail> {
+        if (recipeId != null){
+            return flow { emit(recipeApi.getRecipeDetail(recipeId)) }
+                .catch {
+                    throw NoDataRecipeException()
+                }.map {
+                    Mapper.convert(it)
+                }
+        } else {
+            return throw NoDataRecipeException()
+        }
     }
 }

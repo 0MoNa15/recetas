@@ -1,6 +1,7 @@
 package com.mona15.recetas.recipe.list.view
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -20,6 +21,7 @@ import androidx.compose.runtime.toMutableStateList
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -29,6 +31,7 @@ import com.mona15.recetas.recipe.list.viewmodel.RecipeListViewModel
 
 @Composable
 fun RecipeListScreen(
+    navigateToDetailRecipeScreen: (recipeId: Int) -> Unit,
     viewModel: RecipeListViewModel = hiltViewModel()
 ) {
     val uiState = viewModel.uiState.collectAsState()

@@ -5,6 +5,6 @@ import com.mona15.domain.recipe.repository.RecipeRepository
 import kotlinx.coroutines.flow.Flow
 
 class GetRecipeDetailUseCase constructor(private val recipeRepository: RecipeRepository) {
-    suspend operator fun invoke(recipeId: String): Flow<RecipeDetail> =
+    suspend operator fun invoke(recipeId: String?): Flow<RecipeDetail> =
         recipeRepository.getRecipeDetail(recipeId)
 }

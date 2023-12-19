@@ -57,7 +57,6 @@ class RecipeListViewModel @Inject constructor(
                 loading.value = false
                 error.value = true
                 if(e is NoDataRecipeException) message.value = e.message.toString()
-                println(message.value)
             }
         }
     }

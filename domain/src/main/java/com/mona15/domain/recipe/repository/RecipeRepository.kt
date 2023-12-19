@@ -7,5 +7,5 @@ import kotlinx.coroutines.flow.Flow
 interface RecipeRepository {
     fun getAllRecipes(): Flow<List<Recipe>>
     fun getRecipesByCountry(nameCountry: String): Flow<List<Recipe>>
-    fun getRecipeDetail(recipeId: String): Flow<RecipeDetail>
+    fun getRecipeDetail(recipeId: String?): Flow<RecipeDetail>
 }
