@@ -2,11 +2,11 @@ package com.mona15.recetas
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
-import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import androidx.navigation.navArgument
+import com.mona15.recetas.map.model.Location
+import com.mona15.recetas.map.view.MapScreen
 import com.mona15.recetas.recipe.detail.view.RecipeDetailScreen
 import com.mona15.recetas.recipe.list.view.RecipeListScreen
 
@@ -47,25 +47,14 @@ fun Navigation() {
             )
         }
 
-        /*composable("${LOCATION_MAP_SCREEN_ROUTE}/{${RECIPE_ID_ARGUMENT}}",
-            arguments = listOf(
-                navArgument(LOCATION_ARGUMENT) {
-                    type = NavType.IntType
-                }
-            )) {
+        composable("${LOCATION_MAP_SCREEN_ROUTE}/{${LOCATION_ARGUMENT}}") {
+            val location = navController.currentBackStackEntry?.arguments?.getParcelable<Location>(LOCATION_ARGUMENT)
 
-            val location = remember {
-                it.arguments?.getParcelable(LOCATION_ARGUMENT)
-            }
-
-            LocationMapScreen(
-                navigateToLocationMapScreen = {
-                    navController.navigate("${LOCATION_MAP_SCREEN_ROUTE}/${it}")
-                },
-                recipeId = recipeId,
+            MapScreen(
+                location = location,
                 popBackStack = {
                     navController.popBackStack()
                 })
-        }*/
+        }
     }
 }
