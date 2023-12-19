@@ -1,8 +1,10 @@
 package com.mona15.recetas.country
 
 import com.mona15.domain.country.model.Country
-import com.mona15.recetas.BaseUiState
 
 data class CountryUiState(
-    var success: List<Country> = emptyList()
-) : BaseUiState()
+    var success: List<Country> = emptyList(),
+    var loading: Boolean = false,
+    var error: Boolean = false,
+    var message: String = ""
+)
