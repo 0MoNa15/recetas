@@ -4,6 +4,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -40,7 +41,6 @@ fun RecipeListView(recipes: List<Recipe>) {
     }
 }
 
-
 @Composable
 fun RecipeCard(
     recipe: Recipe,
@@ -49,7 +49,7 @@ fun RecipeCard(
     Card(
         modifier = modifier
             .fillMaxWidth()
-            .padding(dimensionResource(id = R.dimen.padding)),
+            .padding(dimensionResource(id = R.dimen.padding_double)),
         shape = RoundedCornerShape(dimensionResource(id = R.dimen.card_corner)),
         elevation = dimensionResource(id = R.dimen.card_elevation),
     ) {
@@ -57,7 +57,9 @@ fun RecipeCard(
             AsyncImage(
                 model = recipe.urlImage,
                 contentDescription = null,
-                modifier = Modifier.fillMaxSize()
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .aspectRatio(1f)
             )
             Box(
                 modifier = Modifier
@@ -68,25 +70,12 @@ fun RecipeCard(
                                 Color.Transparent,
                                 Color.DarkGray
                             ),
-                            startY = 300f
+                            startY = 100f,
+                            //endY = 0.1f
                         )
                     )
             ) {
             }
-            Box(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .background(
-                        Brush.horizontalGradient(
-                            colors = listOf(
-                                Color.DarkGray,
-                                Color.Transparent,
-                                Color.Transparent,
-                                Color.DarkGray
-                            )
-                        )
-                    )
-            )
             Box(
                 modifier = Modifier
                     .fillMaxSize()

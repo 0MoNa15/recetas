@@ -82,7 +82,9 @@ fun RecipeListContent(
 
             val recipesFilter = recipes.toMutableStateList()
             val search: (value: String) -> Unit = { value ->
-                val result = recipes.filter { it.name.contains(value, ignoreCase = true) }
+                val result = recipes.filter {
+                    it.name.contains(value, ignoreCase = true)
+                }
                 recipesFilter.apply {
                     clear()
                     addAll(result)
