@@ -21,6 +21,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.dimensionResource
+import androidx.compose.ui.res.stringResource
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.mona15.domain.recipe.model.Recipe
 import com.mona15.recetas.R
@@ -115,7 +116,10 @@ private fun FieldSearch(search: (value: String) -> Unit) {
             searchTerm = it
             search(it)
         },
-        label = { Text("Buscar") },
+        label = {
+            val text = stringResource(id = R.string.search_recipe)
+            Text(text = text)
+        },
         modifier = Modifier
             .fillMaxWidth()
             .padding(dimensionResource(id = R.dimen.padding_double)),

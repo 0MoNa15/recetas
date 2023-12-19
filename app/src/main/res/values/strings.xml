@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Recetas</string>
     <string name="no_data_description">No hay datos</string>
+    <string name="search_recipe">Buscar receta</string>
 </resources>
