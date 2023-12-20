@@ -2,7 +2,6 @@ package com.mona15.recetas.recipe.detail.view
 
 import androidx.compose.foundation.Image
 import androidx.compose.runtime.Composable
-import com.mona15.domain.recipe.model.Location
 import com.mona15.domain.recipe.model.RecipeDetail
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -12,26 +11,22 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.MaterialTheme.typography
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Add
-import androidx.compose.material.icons.filled.FavoriteBorder
 import androidx.compose.material.icons.filled.LocationOn
-import androidx.compose.material.icons.filled.Warning
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
-import com.mona15.domain.country.model.Country
 import com.mona15.domain.recipe.model.Ingredient
 import com.mona15.domain.recipe.model.Macronutrient
 import com.mona15.recetas.R
+import com.mona15.recetas.map.mapper.LocationMapMapper
+import com.mona15.recetas.map.model.LocationParcelable
 
 @Composable
 fun RecipeDetailContent(
@@ -39,7 +34,7 @@ fun RecipeDetailContent(
     loading: Boolean,
     error: Boolean,
     popBackStack: () -> Unit,
-    navigateToLocationMapScreen: (location: Location) -> Unit,
+    navigateToLocationMapScreen: (location: LocationParcelable) -> Unit,
 ) {
     Box(
         modifier = Modifier
@@ -71,7 +66,9 @@ fun RecipeDetailContent(
             }
 
             item {
-                LocationButton(location = recipe.location, navigateToLocationMapScreen = navigateToLocationMapScreen)
+                LocationButton(
+                    location = LocationMapMapper.fromDomainToParcelable(recipe.location),
+                    navigateToLocationMapScreen = navigateToLocationMapScreen)
             }
         }
     }
@@ -254,10 +251,12 @@ fun DetailItem(icon: Int, text: String, label: String) {
 }
 
 @Composable
-fun LocationButton(location: Location, navigateToLocationMapScreen: (location: Location) -> Unit) {
+fun LocationButton(location: LocationParcelable, navigateToLocationMapScreen: (location: LocationParcelable) -> Unit) {
 
     Button(
-        onClick = { navigateToLocationMapScreen(location) },
+        onClick = {
+                    navigateToLocationMapScreen(location)
+                  },
         modifier = Modifier
             .fillMaxWidth()
             .padding(

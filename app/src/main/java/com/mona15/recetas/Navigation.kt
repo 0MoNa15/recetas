@@ -1,14 +1,19 @@
 package com.mona15.recetas
 
+import android.os.Bundle
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.mona15.recetas.map.model.Location
+import androidx.navigation.navArgument
+import com.mona15.recetas.map.model.LocationParcelable
 import com.mona15.recetas.map.view.MapScreen
 import com.mona15.recetas.recipe.detail.view.RecipeDetailScreen
 import com.mona15.recetas.recipe.list.view.RecipeListScreen
+import kotlinx.serialization.json.Json
+import kotlinx.serialization.json.encodeToJsonElement
 
 private const val RECIPE_LIST_SCREEN_ROUTE = "recipe_list_screen"
 private const val RECIPE_DETAIL_SCREEN_ROUTE = "recipe_detail_screen"
@@ -41,14 +46,20 @@ fun Navigation() {
                 popBackStack = {
                     navController.popBackStack()
                 },
-                navigateToLocationMapScreen = {
-                    navController.navigate("${LOCATION_MAP_SCREEN_ROUTE}/${it}")
+                navigateToLocationMapScreen = { locationParcelable ->
+                    navController.navigate("${LOCATION_MAP_SCREEN_ROUTE}/${Json.encodeToJsonElement(locationParcelable)}")
+
                 }
             )
         }
 
-        composable("${LOCATION_MAP_SCREEN_ROUTE}/{${LOCATION_ARGUMENT}}") {
-            val location = navController.currentBackStackEntry?.arguments?.getParcelable<Location>(LOCATION_ARGUMENT)
+        composable(
+            route = "${LOCATION_MAP_SCREEN_ROUTE}/{${LOCATION_ARGUMENT}}",
+            arguments = listOf(navArgument(LOCATION_ARGUMENT) {
+                type = LocalizationParcelableNavType
+            })
+        ) {
+            val location = it.arguments?.getParcelable<LocationParcelable>(LOCATION_ARGUMENT)
 
             MapScreen(
                 location = location,
@@ -56,5 +67,20 @@ fun Navigation() {
                     navController.popBackStack()
                 })
         }
+    }
+}
+
+val LocalizationParcelableNavType = object : NavType<LocationParcelable>(isNullableAllowed = false){
+
+    override fun put(bundle: Bundle, key: String, value: LocationParcelable) {
+        bundle.putParcelable(key, value)
+    }
+
+    override fun get(bundle: Bundle, key: String): LocationParcelable? {
+        return bundle.getParcelable(key) as LocationParcelable?
+    }
+
+    override fun parseValue(value: String): LocationParcelable {
+        return Json.decodeFromString(value)
     }
 }

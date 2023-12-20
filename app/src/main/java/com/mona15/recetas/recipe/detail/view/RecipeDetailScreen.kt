@@ -12,13 +12,14 @@ import com.mona15.domain.recipe.model.Ingredient
 import com.mona15.domain.recipe.model.Location
 import com.mona15.domain.recipe.model.Macronutrient
 import com.mona15.domain.recipe.model.RecipeDetail
+import com.mona15.recetas.map.model.LocationParcelable
 import com.mona15.recetas.recipe.detail.viewmodel.RecipeDetailViewModel
 
 @Composable
 fun RecipeDetailScreen(
     recipeId: String?,
     popBackStack: () -> Unit,
-    navigateToLocationMapScreen: (location: Location) -> Unit,
+    navigateToLocationMapScreen: (location: LocationParcelable) -> Unit,
     recipeDetailViewModel: RecipeDetailViewModel = hiltViewModel()
 ) {
     val uiState by recipeDetailViewModel.uiState.collectAsState()
@@ -38,7 +39,8 @@ fun RecipeDetailScreen(
             Ingredient("Crema de leche", 100, "mililitros")
         ),
         macronutrients = Macronutrient(400, 25, 10, 50),
-        location = Location(4.6097, -74.0817, "Bogotá", Country("Colombia", "https://ibb.co/wdzWDHD")),
+        //location = Location(4.6097, -74.0817, "Bogotá", Country("Colombia", "https://ibb.co/wdzWDHD")),
+        location = Location(4.6097, -74.0817, "Bogotá", Country("Colombia", "aqui")),
         preparationTimeMinutes = 40,
         slices = 4,
         difficulty = "Media",
