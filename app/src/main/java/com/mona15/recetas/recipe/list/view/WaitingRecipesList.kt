@@ -17,7 +17,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.dimensionResource
+import androidx.compose.ui.res.stringResource
 import com.mona15.recetas.R
 
 @Composable
@@ -39,6 +41,7 @@ fun WaintingRecipeCard(
 ) {
     Card(
         modifier = modifier
+            .testTag(stringResource(id = R.string.card_tag))
             .fillMaxWidth()
             .padding(dimensionResource(id = R.dimen.padding)),
         shape = RoundedCornerShape(dimensionResource(id = R.dimen.card_corner)),

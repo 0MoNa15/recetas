@@ -16,6 +16,7 @@ import androidx.compose.material.icons.filled.LocationOn
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -38,7 +39,9 @@ fun RecipeDetailContent(
     navigateToLocationMapScreen: (location: LocationParcelable) -> Unit,
 ) {
     Box(
-        modifier = Modifier.fillMaxSize()
+        modifier = Modifier
+            .fillMaxSize()
+            .testTag(stringResource(R.string.recipedetailcontenttag))
     ) {
         if (loading) {
             CircularProgressIndicator(
@@ -47,7 +50,9 @@ fun RecipeDetailContent(
                     .size(dimensionResource(id = R.dimen.loading_size))
                     .align(Alignment.Center)
                     .padding(
-                        top = dimensionResource(id = R.dimen.detail_screen_padding) + dimensionResource(id = R.dimen.card_size) / 2f,
+                        top = dimensionResource(id = R.dimen.detail_screen_padding) + dimensionResource(
+                            id = R.dimen.card_size
+                        ) / 2f,
                         start = dimensionResource(id = R.dimen.padding_double),
                         end = dimensionResource(id = R.dimen.padding_double),
                         bottom = dimensionResource(id = R.dimen.padding_double)

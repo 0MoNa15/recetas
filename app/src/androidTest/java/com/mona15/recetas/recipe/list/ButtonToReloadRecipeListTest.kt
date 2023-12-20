@@ -4,10 +4,8 @@ import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
-import androidx.compose.ui.test.performClick
 import androidx.compose.ui.test.performTextInput
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.mona15.domain.recipe.model.Recipe
 import com.mona15.recetas.recipe.list.model.RecipeBuilder
 import com.mona15.recetas.recipe.list.view.RecipeListContent
 import com.mona15.recetas.ui.theme.RecetasTheme
