@@ -18,4 +18,9 @@
     <string name="no_se_ha_ecnontrado_receta">No se ha encontrado la receta o el ingrediente</string>
     <string name="recargar_las_recetas">Recargar las recetas</string>
     <string name="logo_description">Logo de la aplicación</string>
+
+    <string name="recipe_list_tag">recipeListContentTag</string>
+    <string name="search_tag">searchTag</string>
+    <string name="recipe_card_tag">recipeCardTag</string>
+    <string name="text_card_tag">textCardTag</string>
 </resources>

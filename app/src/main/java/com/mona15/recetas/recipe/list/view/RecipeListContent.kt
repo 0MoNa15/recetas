@@ -30,6 +30,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
@@ -48,9 +49,9 @@ fun RecipeListContent(
     loading: Boolean,
     error: Boolean,
     navigateToDetailRecipeScreen: (recipeId: String) -> Unit,
-    viewModel: RecipeListViewModel = hiltViewModel()
+    //viewModel: RecipeListViewModel = hiltViewModel()
 ) {
-    Column {
+    Column{
         Column(
             modifier = Modifier
                 .fillMaxWidth()
@@ -64,6 +65,7 @@ fun RecipeListContent(
                         endY = 0f
                     )
                 )
+                .testTag(stringResource(id = R.string.recipe_list_tag))
         ) {
             val appBarColor = MaterialTheme.colors.surface.copy(alpha = 0.87f)
             Spacer(
@@ -97,7 +99,7 @@ fun RecipeListContent(
                         recipes = recipesFilter,
                         navigateToDetailRecipeScreen = navigateToDetailRecipeScreen,
                         reloadRecipes = {
-                            viewModel.getAllRecipes()
+                            //viewModel.getAllRecipes()
                         }
                     )
                 }
@@ -122,7 +124,8 @@ private fun FieldSearch(search: (value: String) -> Unit) {
         },
         modifier = Modifier
             .fillMaxWidth()
-            .padding(dimensionResource(id = R.dimen.padding_double)),
+            .testTag(stringResource(id = R.string.search_tag))
+            .padding(dimensionResource(id = R.dimen.padding_double))
     )
 }
 
@@ -157,6 +160,7 @@ fun RecipeCard(
 ) {
     Card(
         modifier = modifier
+            .testTag(stringResource(id = R.string.recipe_card_tag))
             .clickable {
                 navigateToDetailRecipeScreen.invoke(recipe.id)
             }
@@ -189,6 +193,7 @@ fun RecipeCard(
             }
             Box(
                 modifier = Modifier
+                    .testTag(stringResource(id = R.string.text_card_tag))
                     .fillMaxSize()
                     .padding(dimensionResource(id = R.dimen.padding_double)),
                 contentAlignment = Alignment.BottomStart

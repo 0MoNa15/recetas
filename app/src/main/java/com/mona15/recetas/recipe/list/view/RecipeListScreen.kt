@@ -32,7 +32,7 @@ fun RecipeListScreen(
             recipes = uiState.value.success,
             error = uiState.value.error,
             navigateToDetailRecipeScreen = navigateToDetailRecipeScreen,
-            viewModel = viewModel
+            //viewModel = viewModel
         )
     }
 }
