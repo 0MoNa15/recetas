@@ -43,7 +43,8 @@ class SearchingForARecipeForInformationThatDoesNotExistTest {
                     recipes = recipes,
                     loading = false,
                     error = false,
-                    navigateToDetailRecipeScreen = { }
+                    navigateToDetailRecipeScreen = { },
+                    null
                 )
             }
         }
