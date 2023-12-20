@@ -32,6 +32,8 @@ ext {
 
     modelmapper_version = "3.1.0"
     serialization_version = "1.6.0"
+    googlemap_version = "4.3.0"
+    playservices_gsm_version = "18.2.0"
 
     ktx = "androidx.core:core-ktx:$ktx_version"
     material = "com.google.android.material:material:$material_version"
@@ -84,4 +86,9 @@ ext {
     fragmentKtx =  "androidx.fragment:fragment-ktx:$fragmentKtx_version"
 
     serialization =  "org.jetbrains.kotlinx:kotlinx-serialization-json:$serialization_version"
+
+    // Map
+    googlemap_compose = "com.google.maps.android:maps-compose:$googlemap_version"
+    googlemap_utils = "com.google.maps.android:maps-compose-utils:$googlemap_version"
+    playservices_gsm = "com.google.android.gms:play-services-maps:$playservices_gsm_version"
 }
