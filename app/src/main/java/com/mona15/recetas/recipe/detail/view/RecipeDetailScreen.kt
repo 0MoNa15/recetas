@@ -18,12 +18,11 @@ import com.mona15.recetas.recipe.detail.viewmodel.RecipeDetailViewModel
 @Composable
 fun RecipeDetailScreen(
     recipeId: String?,
-    popBackStack: () -> Unit,
     navigateToLocationMapScreen: (location: LocationParcelable) -> Unit,
     recipeDetailViewModel: RecipeDetailViewModel = hiltViewModel()
 ) {
     val uiState by recipeDetailViewModel.uiState.collectAsState()
-    //recipeDetailViewModel.getRecipe(recipeId)
+    recipeDetailViewModel.getRecipe(recipeId)
 
     val recipeDetail = RecipeDetail(
         id = recipeId!!,
@@ -59,7 +58,6 @@ fun RecipeDetailScreen(
             //recipe = uiState.success,
             recipe = recipeDetail,
             error = uiState.error,
-            popBackStack = popBackStack,
             navigateToLocationMapScreen = navigateToLocationMapScreen
         )
     }

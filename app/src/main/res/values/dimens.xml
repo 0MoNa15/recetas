@@ -13,5 +13,8 @@
     <dimen name="card_elevation">5dp</dimen>
     <dimen name="card_size">200dp</dimen>
     <dimen name="padding_24_dp">24dp</dimen>
+    <dimen name="detail_screen_padding">30dp</dimen>
+
+    <dimen name="loading_size">100dp</dimen>
 
 </resources>

@@ -45,9 +45,6 @@ fun Navigation(isLoading: (Boolean) -> Unit, loadingSplashScreen: Boolean) {
 
                 RecipeDetailScreen(
                     recipeId = recipeId,
-                    popBackStack = {
-                        navController.popBackStack()
-                    },
                     navigateToLocationMapScreen = { locationParcelable ->
                         navController.navigate("$LOCATION_MAP_SCREEN_ROUTE/${
                             Uri.encode(Json.encodeToJsonElement(locationParcelable).toString())

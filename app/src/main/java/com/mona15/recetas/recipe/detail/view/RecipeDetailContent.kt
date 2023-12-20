@@ -6,6 +6,7 @@ import com.mona15.domain.recipe.model.RecipeDetail
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.Button
+import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.MaterialTheme.typography
@@ -27,49 +28,73 @@ import com.mona15.domain.recipe.model.Macronutrient
 import com.mona15.recetas.R
 import com.mona15.recetas.map.mapper.LocationMapMapper
 import com.mona15.recetas.map.model.LocationParcelable
+import com.mona15.recetas.recipe.list.view.state.NoDataScreen
 
 @Composable
 fun RecipeDetailContent(
     recipe: RecipeDetail,
     loading: Boolean,
     error: Boolean,
-    popBackStack: () -> Unit,
     navigateToLocationMapScreen: (location: LocationParcelable) -> Unit,
 ) {
     Box(
-        modifier = Modifier
-            .fillMaxSize()
+        modifier = Modifier.fillMaxSize()
     ) {
-        LazyColumn(modifier = Modifier.fillMaxSize()) {
-            item {
-                RecipeImageTime(imageUrl = recipe.image, time = recipe.preparationTimeMinutes)
+        if (loading) {
+            CircularProgressIndicator(
+                color = MaterialTheme.colors.primary,
+                modifier = Modifier
+                    .size(dimensionResource(id = R.dimen.loading_size))
+                    .align(Alignment.Center)
+                    .padding(
+                        top = dimensionResource(id = R.dimen.detail_screen_padding) + dimensionResource(id = R.dimen.card_size) / 2f,
+                        start = dimensionResource(id = R.dimen.padding_double),
+                        end = dimensionResource(id = R.dimen.padding_double),
+                        bottom = dimensionResource(id = R.dimen.padding_double)
+                    )
+            )
+        } else {
+            if (error) {
+                NoDataScreen()
+            } else {
+                RecipeDetailView(recipe, navigateToLocationMapScreen)
             }
+        }
+    }
+}
 
-            item {
-                RecipeNameAndDescription(name = recipe.name, description = recipe.description)
-            }
+@Composable
+fun RecipeDetailView(recipe: RecipeDetail, navigateToLocationMapScreen: (location: LocationParcelable) -> Unit){
+    LazyColumn(modifier = Modifier.fillMaxSize()) {
 
-            item {
-                RecipeNutritionalInformation(macronutrients = recipe.macronutrients)
-            }
+        item {
+            RecipeImageTime(imageUrl = recipe.image, time = recipe.preparationTimeMinutes)
+        }
 
-            item {
-                RecipeIngredient(ingredients = recipe.ingredients)
-            }
+        item {
+            RecipeNameAndDescription(name = recipe.name, description = recipe.description)
+        }
 
-            item {
-                RecipeInstructions(instructions = recipe.instructions)
-            }
+        item {
+            RecipeNutritionalInformation(macronutrients = recipe.macronutrients)
+        }
 
-            item {
-                RecipeDetails(preparationTime = recipe.preparationTimeMinutes, slices = recipe.slices, difficulty = recipe.difficulty)
-            }
+        item {
+            RecipeIngredient(ingredients = recipe.ingredients)
+        }
 
-            item {
-                LocationButton(
-                    location = LocationMapMapper.fromDomainToParcelable(recipe.location),
-                    navigateToLocationMapScreen = navigateToLocationMapScreen)
-            }
+        item {
+            RecipeInstructions(instructions = recipe.instructions)
+        }
+
+        item {
+            RecipeDetails(preparationTime = recipe.preparationTimeMinutes, slices = recipe.slices, difficulty = recipe.difficulty)
+        }
+
+        item {
+            LocationButton(
+                location = LocationMapMapper.fromDomainToParcelable(recipe.location),
+                navigateToLocationMapScreen = navigateToLocationMapScreen)
         }
     }
 }
