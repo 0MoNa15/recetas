@@ -40,7 +40,7 @@ fun RecipeDetailScreen(
         ),
         macronutrients = Macronutrient(400, 25, 10, 50),
         //location = Location(4.6097, -74.0817, "Bogotá", Country("Colombia", "https://ibb.co/wdzWDHD")),
-        location = Location(4.6097, -74.0817, "Bogotá", Country("Colombia", "aqui")),
+        location = Location(4.6097, -74.0817, "Bogotá", Country("Colombia", "https://i.ibb.co/7S1W7c7/bandera-colombia.png")),
         preparationTimeMinutes = 40,
         slices = 4,
         difficulty = "Media",

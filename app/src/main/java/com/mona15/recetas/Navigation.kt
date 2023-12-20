@@ -1,5 +1,6 @@
 package com.mona15.recetas
 
+import android.net.Uri
 import android.os.Bundle
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
@@ -47,7 +48,9 @@ fun Navigation() {
                     navController.popBackStack()
                 },
                 navigateToLocationMapScreen = { locationParcelable ->
-                    navController.navigate("${LOCATION_MAP_SCREEN_ROUTE}/${Json.encodeToJsonElement(locationParcelable)}")
+                    navController.navigate("${LOCATION_MAP_SCREEN_ROUTE}/${
+                        Uri.encode(Json.encodeToJsonElement(locationParcelable).toString())
+                    }")
 
                 }
             )
@@ -81,6 +84,6 @@ val LocalizationParcelableNavType = object : NavType<LocationParcelable>(isNulla
     }
 
     override fun parseValue(value: String): LocationParcelable {
-        return Json.decodeFromString(value)
+        return Json.decodeFromString(Uri.decode(value))
     }
 }

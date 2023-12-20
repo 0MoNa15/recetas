@@ -22,6 +22,8 @@ fun MapScreen(
     val cameraPositionState = rememberCameraPositionState {
         position = CameraPosition.fromLatLngZoom(locationMarker, 10f)
     }
+
+
     GoogleMap(
         modifier = Modifier.fillMaxSize(),
         cameraPositionState = cameraPositionState
@@ -30,7 +32,7 @@ fun MapScreen(
         Marker(
             state = rememberMarkerState(position = locationMarker),
             title = location.city,
-            snippet = location.countryParcelable.name,
+            snippet = location.countryParcelable.flag,
             icon = BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)
         )
     }
