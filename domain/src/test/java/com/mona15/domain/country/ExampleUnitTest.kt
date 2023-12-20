@@ -1,4 +1,4 @@
-package com.mona15.domain
+package com.mona15.domain.country
 
 import org.junit.Test
 
