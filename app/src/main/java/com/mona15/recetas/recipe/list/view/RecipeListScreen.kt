@@ -16,7 +16,7 @@ fun RecipeListScreen(
 ) {
     val uiState = viewModel.uiState.collectAsState()
 
-    //viewModel.getAllRecipes()
+    viewModel.getAllRecipes()
 
     val recipes = listOf(
         Recipe("1", "Ajiaco", listOf("Harina", "Azúcar", "Huevos", "Levadura", "Sal"), "https://i.ibb.co/smHpRvH/rocoto-relleno.jpg"),
@@ -28,8 +28,8 @@ fun RecipeListScreen(
     Surface(Modifier.fillMaxSize()) {
         RecipeListContent(
             loading = uiState.value.loading,
-            recipes = recipes,
-            //recipes = uiState.value.success,
+            //recipes = recipes,
+            recipes = uiState.value.success,
             error = uiState.value.error,
             navigateToDetailRecipeScreen = navigateToDetailRecipeScreen,
             viewModel = viewModel

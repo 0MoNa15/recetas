@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -32,6 +33,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import coil.compose.AsyncImage
 import com.mona15.domain.recipe.model.Recipe
@@ -191,7 +193,12 @@ fun RecipeCard(
                     .padding(dimensionResource(id = R.dimen.padding_double)),
                 contentAlignment = Alignment.BottomStart
             ) {
-                Text(recipe.name, style = TextStyle(color = Color.White))
+                Text(recipe.name, 
+                    style = TextStyle(
+                        color = Color.White,
+                        fontSize = 20.sp
+                    )
+                )
             }
         }
     }

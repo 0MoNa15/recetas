@@ -22,7 +22,7 @@ fun RecipeDetailScreen(
     recipeDetailViewModel: RecipeDetailViewModel = hiltViewModel()
 ) {
     val uiState by recipeDetailViewModel.uiState.collectAsState()
-    recipeDetailViewModel.getRecipe(recipeId)
+    //recipeDetailViewModel.getRecipe(recipeId)
 
     val recipeDetail = RecipeDetail(
         id = recipeId!!,

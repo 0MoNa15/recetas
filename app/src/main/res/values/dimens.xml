@@ -16,5 +16,6 @@
     <dimen name="detail_screen_padding">30dp</dimen>
 
     <dimen name="loading_size">100dp</dimen>
+    <dimen name="font_size_list">16dp</dimen>
 
 </resources>
