@@ -10,6 +10,7 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 
 import com.mona15.recetas.recipe.list.model.RecipeBuilder
 import com.mona15.recetas.recipe.list.view.RecipeListContent
+import com.mona15.recetas.recipe.list.viewmodel.RecipeListViewModel
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -45,7 +46,8 @@ class SearchingRecipeByNameTest {
                     recipes = recipes,
                     loading = false,
                     error = false,
-                    navigateToDetailRecipeScreen = { }
+                    navigateToDetailRecipeScreen = { },
+                    null
                 )
             }
         }
@@ -82,7 +84,8 @@ class SearchingRecipeByNameTest {
                     recipes = recipes,
                     loading = false,
                     error = false,
-                    navigateToDetailRecipeScreen = { }
+                    navigateToDetailRecipeScreen = { },
+                    null
                 )
             }
         }

@@ -12,7 +12,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -49,7 +48,7 @@ fun RecipeListContent(
     loading: Boolean,
     error: Boolean,
     navigateToDetailRecipeScreen: (recipeId: String) -> Unit,
-    //viewModel: RecipeListViewModel = hiltViewModel()
+    viewModel: RecipeListViewModel? = hiltViewModel()
 ) {
     Column{
         Column(
@@ -99,7 +98,7 @@ fun RecipeListContent(
                         recipes = recipesFilter,
                         navigateToDetailRecipeScreen = navigateToDetailRecipeScreen,
                         reloadRecipes = {
-                            //viewModel.getAllRecipes()
+                            viewModel?.getAllRecipes()
                         }
                     )
                 }
@@ -174,6 +173,7 @@ fun RecipeCard(
                 model = recipe.urlImage,
                 contentDescription = null,
                 modifier = Modifier
+                    .testTag(stringResource(id = R.string.image_card_tag))
                     .fillMaxWidth()
                     .aspectRatio(1f)
             )
