@@ -15,6 +15,7 @@
     <string name="porciones">Porciones</string>
     <string name="ver_lugar_de_origen">Ver lugar de origen</string>
     <string name="min">%1$s min</string>
-    <string name="no_se_ha_ecnontrado_receta">No se ha encontrado la receta</string>
+    <string name="no_se_ha_ecnontrado_receta">No se ha encontrado la receta o el ingrediente</string>
     <string name="recargar_las_recetas">Recargar las recetas</string>
+    <string name="logo_description">Logo de la aplicación</string>
 </resources>

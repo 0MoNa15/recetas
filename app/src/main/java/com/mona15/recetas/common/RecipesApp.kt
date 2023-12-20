@@ -1,4 +1,4 @@
-package com.mona15.recetas
+package com.mona15.recetas.common
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp

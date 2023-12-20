@@ -1,7 +1,7 @@
 package com.mona15.recetas.map.model
 
 import android.os.Parcelable
-import com.mona15.recetas.country.CountryParcelable
+import com.mona15.recetas.country.model.CountryParcelable
 import kotlinx.parcelize.Parcelize
 import kotlinx.serialization.Serializable
 

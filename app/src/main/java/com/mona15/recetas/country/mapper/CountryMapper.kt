@@ -1,7 +1,7 @@
 package com.mona15.recetas.country.mapper
 
 import com.mona15.domain.country.model.Country
-import com.mona15.recetas.country.CountryParcelable
+import com.mona15.recetas.country.model.CountryParcelable
 
 
 object CountryMapper {

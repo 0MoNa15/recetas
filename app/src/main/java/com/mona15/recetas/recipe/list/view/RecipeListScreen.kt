@@ -31,7 +31,8 @@ fun RecipeListScreen(
             recipes = recipes,
             //recipes = uiState.value.success,
             error = uiState.value.error,
-            navigateToDetailRecipeScreen = navigateToDetailRecipeScreen
+            navigateToDetailRecipeScreen = navigateToDetailRecipeScreen,
+            viewModel = viewModel
         )
     }
 }

@@ -32,11 +32,13 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
+import androidx.hilt.navigation.compose.hiltViewModel
 import coil.compose.AsyncImage
 import com.mona15.domain.recipe.model.Recipe
 import com.mona15.recetas.R
 import com.mona15.recetas.recipe.list.view.state.EmptyListView
 import com.mona15.recetas.recipe.list.view.state.NoDataScreen
+import com.mona15.recetas.recipe.list.viewmodel.RecipeListViewModel
 
 @Composable
 fun RecipeListContent(
@@ -44,6 +46,7 @@ fun RecipeListContent(
     loading: Boolean,
     error: Boolean,
     navigateToDetailRecipeScreen: (recipeId: String) -> Unit,
+    viewModel: RecipeListViewModel = hiltViewModel()
 ) {
     Column {
         Column(
@@ -90,7 +93,10 @@ fun RecipeListContent(
                 } else {
                     RecipeListView(
                         recipes = recipesFilter,
-                        navigateToDetailRecipeScreen = navigateToDetailRecipeScreen
+                        navigateToDetailRecipeScreen = navigateToDetailRecipeScreen,
+                        reloadRecipes = {
+                            viewModel.getAllRecipes()
+                        }
                     )
                 }
             }
@@ -123,9 +129,10 @@ private fun FieldSearch(search: (value: String) -> Unit) {
 fun RecipeListView(
     recipes: List<Recipe>,
     navigateToDetailRecipeScreen: (recipeId: String) -> Unit,
+    reloadRecipes: () -> Unit
 ) {
     if (recipes.isEmpty()) {
-        EmptyListView()
+        EmptyListView(callToAction = reloadRecipes)
     } else {
         LazyColumn(
             contentPadding = PaddingValues(dimensionResource(id = R.dimen.no_padding)),

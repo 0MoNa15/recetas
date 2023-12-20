@@ -1,4 +1,4 @@
-package com.mona15.recetas.country
+package com.mona15.recetas.country.model
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
