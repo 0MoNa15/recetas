@@ -7,8 +7,8 @@ import com.mona15.infraestructure.recipe.dto.RecipeDto
 class RecipeTranslate {
     companion object {
 
-        private fun mapRecipeDtoToDomain(movieDto: RecipeDto): Recipe {
-            return Mapper.convert(movieDto)
+        fun mapRecipeDtoToDomain(recipeDto: RecipeDto): Recipe {
+            return Mapper.convert(recipeDto)
         }
 
         fun mapRecipesDtoToDomain(recipeListDto: List<RecipeDto>): List<Recipe> {

@@ -7,11 +7,11 @@ import kotlinx.coroutines.flow.flow
 class Builder {
     companion object{
         fun getFlowListRecipe (): Flow<List<Recipe>> {
-            val movies = listOf(
+            val recipes = listOf(
                 RecipeBuilder.getRecipe("Ajiaco"),
                 RecipeBuilder.getRecipe("Causa Rellena")
             )
-            return flow { emit(movies) }
+            return flow { emit(recipes) }
         }
 
         fun getListRecipe (): List<Recipe> = listOf(

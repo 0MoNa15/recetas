@@ -1,4 +1,4 @@
-package com.mona15.infraestructure
+package com.mona15.infraestructure.country
 
 import org.junit.Test
 
