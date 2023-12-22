@@ -5,7 +5,10 @@ Esta aplicación te permite descubrir recetas auténticas de Perú y Colombia, c
 ## Características Principales
 
 - **Arquitectura DDD (Domain Driven Design):** La aplicación sigue una arquitectura DDD para organizar y estructurar el código de manera clara y modular.
-  
+  * recipes - capa de presentación
+  * domain - capa de dominio donde encontramos nuestras reglas de negocio, objetos de dominio y casos de uso
+  * infrastructure - capa mas externa donde encontramos los detalles como Cliente Http
+
 - **Patrones de Diseño Utilizados:**
   - Repository: Para gestionar el acceso a datos.
   - ModelMapper: Para mapear modelos entre capas.
