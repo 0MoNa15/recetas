@@ -9,6 +9,8 @@ Esta aplicación te permite descubrir recetas auténticas de Perú y Colombia, c
   * domain - capa de dominio donde encontramos nuestras reglas de negocio, objetos de dominio y casos de uso
   * infrastructure - capa mas externa donde encontramos los detalles como Cliente Http
 
+ ![arquitectura_recetas_android drawio](https://github.com/0MoNa15/recetas/assets/21272764/fc2d106d-57b1-41b5-8a67-ba9c9dc26e10)
+
 - **Patrones de Diseño Utilizados:**
   - Repository: Para gestionar el acceso a datos.
   - ModelMapper: Para mapear modelos entre capas.
@@ -38,4 +40,4 @@ Esta aplicación te permite descubrir recetas auténticas de Perú y Colombia, c
 
 - **Servidor de Imágenes:** [ImgBB](https://mona15.imgbb.com/)
 - **Servidor de Endpoints:** [Mockable](https://www.mockable.io/)
-
+  
