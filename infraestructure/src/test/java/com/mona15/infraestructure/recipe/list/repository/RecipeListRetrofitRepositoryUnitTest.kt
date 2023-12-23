@@ -28,6 +28,7 @@ class RecipeListRetrofitRepositoryUnitTest {
     @InjectMocks
     private lateinit var recipeRepository: RecipeListRetrofitRepository
 
+    @OptIn(ExperimentalCoroutinesApi::class)
     @Test
     fun `getAllRecipes() exitoso, debería devolver una lista de recetas válida`() = runTest {
         // Arrange
