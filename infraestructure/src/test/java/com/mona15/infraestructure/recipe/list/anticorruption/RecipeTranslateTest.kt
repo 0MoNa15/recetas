@@ -1,4 +1,4 @@
-package com.mona15.infraestructure.recipe.anticorruption
+package com.mona15.infraestructure.recipe.list.anticorruption
 
 import com.mona15.domain.recipe.list.model.Recipe
 import com.mona15.infraestructure.recipe.list.dto.RecipeDto

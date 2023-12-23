@@ -1,4 +1,4 @@
-package com.mona15.infraestructure.recipe.model
+package com.mona15.infraestructure.recipe.list.model
 
 import com.mona15.infraestructure.recipe.list.dto.RecipeDto
 

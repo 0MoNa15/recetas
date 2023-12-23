@@ -1,10 +1,9 @@
-package com.mona15.infraestructure.recipe.repository
+package com.mona15.infraestructure.recipe.list.repository
 
 import com.mona15.infraestructure.anticorruption.Mapper
 import com.mona15.infraestructure.recipe.list.api.RecipeApi
 import com.mona15.infraestructure.recipe.list.dto.ResponseRecipesDto
-import com.mona15.infraestructure.recipe.model.RecipeDtoBuilder
-import com.mona15.infraestructure.recipe.list.repository.RecipeListRetrofitRepository
+import com.mona15.infraestructure.recipe.list.model.RecipeDtoBuilder
 import kotlinx.coroutines.flow.toList
 import kotlinx.coroutines.runBlocking
 import org.junit.Test

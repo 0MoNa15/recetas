@@ -1,4 +1,4 @@
-package com.mona15.infraestructure.recipe.model
+package com.mona15.infraestructure.recipe.detail.model
 
 import com.mona15.domain.country.model.Country
 import com.mona15.domain.recipe.detail.model.Ingredient
