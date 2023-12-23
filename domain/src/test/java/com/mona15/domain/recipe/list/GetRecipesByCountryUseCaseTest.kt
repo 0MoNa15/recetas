@@ -2,8 +2,7 @@ package com.mona15.domain.recipe.list
 
 import com.mona15.domain.recipe.list.model.Builder
 import com.mona15.domain.recipe.model.Recipe
-import com.mona15.domain.recipe.repository.RecipeRepository
-import com.mona15.domain.recipe.usecases.GetAllRecipesUseCase
+import com.mona15.domain.recipe.repository.RecipeListRepository
 import com.mona15.domain.recipe.usecases.GetRecipesByCountryUseCase
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.runBlocking
@@ -18,7 +17,7 @@ import org.mockito.junit.MockitoJUnitRunner
 @RunWith(MockitoJUnitRunner::class)
 class GetRecipesByCountryUseCaseTest {
     @Mock
-    lateinit var recipeRepository: RecipeRepository
+    lateinit var recipeListRepository: RecipeListRepository
 
     @InjectMocks
     lateinit var getRecipesByCountryUseCase: GetRecipesByCountryUseCase
@@ -30,13 +29,13 @@ class GetRecipesByCountryUseCaseTest {
         runBlocking {
             // Arrange
             val countryName = "Colombia"
-            Mockito.`when`(recipeRepository.getRecipesByCountry(countryName)).thenReturn(flowRecipe)
+            Mockito.`when`(recipeListRepository.getRecipesByCountry(countryName)).thenReturn(flowRecipe)
 
             // Act
             val result = getRecipesByCountryUseCase.invoke(countryName)
 
             // Assert
-            Mockito.verify(recipeRepository, Mockito.times(1)).getRecipesByCountry(countryName)
+            Mockito.verify(recipeListRepository, Mockito.times(1)).getRecipesByCountry(countryName)
             Assert.assertEquals(flowRecipe,result)
         }
     }

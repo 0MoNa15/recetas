@@ -1,7 +1,7 @@
-package com.mona15.infraestructure.recipe.api
+package com.mona15.infraestructure.recipe.list.api
 
-import com.mona15.infraestructure.recipe.dto.ResponseRecipeDetailDto
-import com.mona15.infraestructure.recipe.dto.ResponseRecipesDto
+import com.mona15.infraestructure.recipe.detail.dto.ResponseRecipeDetailDto
+import com.mona15.infraestructure.recipe.list.dto.ResponseRecipesDto
 import retrofit2.http.GET
 import retrofit2.http.Path
 

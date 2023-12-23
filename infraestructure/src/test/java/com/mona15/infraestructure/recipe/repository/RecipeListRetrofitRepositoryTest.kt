@@ -1,13 +1,12 @@
 package com.mona15.infraestructure.recipe.repository
 
 import com.mona15.infraestructure.anticorruption.Mapper
-import com.mona15.infraestructure.recipe.api.RecipeApi
-import com.mona15.infraestructure.recipe.dto.ResponseRecipesDto
+import com.mona15.infraestructure.recipe.list.api.RecipeApi
+import com.mona15.infraestructure.recipe.list.dto.ResponseRecipesDto
 import com.mona15.infraestructure.recipe.model.RecipeDtoBuilder
-import com.mona15.infraestructure.recipe.repository.RecipeRetrofitRepository
+import com.mona15.infraestructure.recipe.list.repository.RecipeListRetrofitRepository
 import kotlinx.coroutines.flow.toList
 import kotlinx.coroutines.runBlocking
-import org.junit.Assert
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.InjectMocks
@@ -16,7 +15,7 @@ import org.mockito.Mockito
 import org.mockito.junit.MockitoJUnitRunner
 
 @RunWith(MockitoJUnitRunner::class)
-class RecipeRetrofitRepositoryTest {
+class RecipeListRetrofitRepositoryTest {
 
     @Mock
     private lateinit var recipeApi: RecipeApi
@@ -25,7 +24,7 @@ class RecipeRetrofitRepositoryTest {
     private lateinit var mapper: Mapper
 
     @InjectMocks
-    private lateinit var recipeRepository: RecipeRetrofitRepository
+    private lateinit var recipeRepository: RecipeListRetrofitRepository
 
     @Test
     fun getAllRecipes_whenApiReturnsRecipes_returnMappedRecipes() {

@@ -2,7 +2,7 @@ package com.mona15.domain.recipe.list
 
 import com.mona15.domain.recipe.list.model.Builder
 import com.mona15.domain.recipe.model.Recipe
-import com.mona15.domain.recipe.repository.RecipeRepository
+import com.mona15.domain.recipe.repository.RecipeListRepository
 import com.mona15.domain.recipe.usecases.GetAllRecipesUseCase
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.runBlocking
@@ -17,7 +17,7 @@ import org.mockito.junit.MockitoJUnitRunner
 @RunWith(MockitoJUnitRunner::class)
 class GetAllRecipesUseCaseTest {
     @Mock
-    lateinit var recipeRepository: RecipeRepository
+    lateinit var recipeListRepository: RecipeListRepository
 
     @InjectMocks
     lateinit var getAllRecipesUseCase: GetAllRecipesUseCase
@@ -28,13 +28,13 @@ class GetAllRecipesUseCaseTest {
     fun `invoke should return flow of all recipes from repository`() {
         runBlocking {
             // Arrange
-            Mockito.`when`(recipeRepository.getAllRecipes()).thenReturn(flowRecipe)
+            Mockito.`when`(recipeListRepository.getAllRecipes()).thenReturn(flowRecipe)
 
             // Act
             val result = getAllRecipesUseCase.invoke()
 
             // Assert
-            Mockito.verify(recipeRepository, Mockito.times(1)).getAllRecipes()
+            Mockito.verify(recipeListRepository, Mockito.times(1)).getAllRecipes()
             Assert.assertEquals(flowRecipe,result)
         }
     }

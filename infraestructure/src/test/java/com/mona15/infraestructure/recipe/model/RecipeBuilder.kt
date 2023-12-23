@@ -1,6 +1,6 @@
 package com.mona15.infraestructure.recipe.model
 
-import com.mona15.infraestructure.recipe.dto.RecipeDto
+import com.mona15.infraestructure.recipe.list.dto.RecipeDto
 
 class RecipeDtoBuilder {
     private var id: String = "COL001"

@@ -1,4 +1,4 @@
-package com.mona15.infraestructure.recipe.dto
+package com.mona15.infraestructure.recipe.detail.dto
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName

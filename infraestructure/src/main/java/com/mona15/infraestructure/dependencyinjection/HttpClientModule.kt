@@ -1,7 +1,8 @@
 package com.mona15.infraestructure.dependencyinjection
 
 import com.mona15.infraestructure.country.api.CountryApi
-import com.mona15.infraestructure.recipe.api.RecipeApi
+import com.mona15.infraestructure.recipe.detail.api.RecipeDetailApi
+import com.mona15.infraestructure.recipe.list.api.RecipeApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -43,7 +44,11 @@ class HttpClientModule {
     }
 
     @Provides
-    fun provideRecipeApi(retrofit: Retrofit) : RecipeApi = retrofit.create(RecipeApi::class.java)
+    fun provideRecipeListApi(retrofit: Retrofit) : RecipeApi = retrofit.create(RecipeApi::class.java)
+
+
+    @Provides
+    fun provideRecipeDetailApi(retrofit: Retrofit) : RecipeDetailApi = retrofit.create(RecipeDetailApi::class.java)
 
     @Provides
     fun provideCountryApi(retrofit: Retrofit) : CountryApi = retrofit.create(CountryApi::class.java)

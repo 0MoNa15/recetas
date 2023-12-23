@@ -2,7 +2,7 @@ package com.mona15.domain.recipe.detail
 
 import com.mona15.domain.recipe.detail.model.Builder
 import com.mona15.domain.recipe.model.RecipeDetail
-import com.mona15.domain.recipe.repository.RecipeRepository
+import com.mona15.domain.recipe.repository.RecipeListRepository
 import com.mona15.domain.recipe.usecases.GetRecipeDetailUseCase
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.runBlocking
@@ -17,7 +17,7 @@ import org.mockito.junit.MockitoJUnitRunner
 @RunWith(MockitoJUnitRunner::class)
 class GetRecipeDetailUseCaseTest {
     @Mock
-    lateinit var recipeRepository: RecipeRepository
+    lateinit var recipeListRepository: RecipeListRepository
 
     @InjectMocks
     lateinit var getDetailUseCase: GetRecipeDetailUseCase
@@ -30,13 +30,13 @@ class GetRecipeDetailUseCaseTest {
         runBlocking {
             // Arrange
             val idRecipe = recipe.id
-            Mockito.`when`(recipeRepository.getRecipeDetail(idRecipe)).thenReturn(flowRecipe)
+            Mockito.`when`(recipeListRepository.getRecipeDetail(idRecipe)).thenReturn(flowRecipe)
 
             // Act
             val result = getDetailUseCase.invoke(idRecipe)
 
             // Assert
-            Mockito.verify(recipeRepository, Mockito.times(1)).getRecipeDetail(idRecipe)
+            Mockito.verify(recipeListRepository, Mockito.times(1)).getRecipeDetail(idRecipe)
             Assert.assertEquals(flowRecipe,result)
         }
     }
