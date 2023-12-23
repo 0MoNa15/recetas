@@ -55,7 +55,7 @@ class RecipeListRetrofitRepositoryUnitTest {
 
     @OptIn(ExperimentalCoroutinesApi::class)
     @Test
-    fun `getAllRecipes() exception, debería lanzar un NoDataRecipeException`() = runTest() {
+    fun `getAllRecipes() exception, debería lanzar un NoDataRecipeException`() = runTest {
 
         // Arrange
         Mockito.`when`(recipeApi.getAllRecipes()).thenAnswer { throw NoDataRecipeException() }
