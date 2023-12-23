@@ -7,18 +7,18 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.dimensionResource
-import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.res.stringResource
 import com.mona15.recetas.R
 
 @Composable
-fun NoDataScreen() {
-   val image: Painter = painterResource(id = R.drawable.nointernet)
+fun NoDataScreen(
+    message: String,
+    image: Painter
+) {
     Image(
         painter = image,
-        contentDescription = stringResource(id = R.string.no_data_description),
+        contentDescription = message,
         modifier = Modifier
-            .padding(dimensionResource(id = R.dimen.padding_92dp))
+            .padding(dimensionResource(id = R.dimen.padding_image_not_found))
             .fillMaxSize()
     )
 }

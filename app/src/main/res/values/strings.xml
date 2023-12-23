@@ -26,4 +26,6 @@
     <string name="image_card_tag">imageCardTag</string>
     <string name="card_tag">cardTag</string>
     <string name="recipedetailcontenttag">recipeDetailContentTag</string>
+    <string name="no_se_ha_encontrado_la_vista">No se ha encontrado la vista</string>
+    <string name="no_se_ha_encontrado_el_detalle">No se ha encontrado el detalle</string>
 </resources>

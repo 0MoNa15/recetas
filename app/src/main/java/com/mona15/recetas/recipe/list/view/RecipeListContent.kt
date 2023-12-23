@@ -31,6 +31,7 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.dimensionResource
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.sp
@@ -92,7 +93,7 @@ fun RecipeListContent(
                 WaitingRecipesList()
             } else {
                 if (error) {
-                    NoDataScreen()
+                    NoDataScreen(message = stringResource(R.string.no_se_ha_encontrado_la_vista), painterResource(id = R.drawable.lista_404))
                 } else {
                     RecipeListView(
                         recipes = recipesFilter,
