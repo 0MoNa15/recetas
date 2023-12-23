@@ -1,8 +1,8 @@
 package com.mona15.infraestructure.recipe.list.model
 
-import com.mona15.infraestructure.recipe.list.dto.RecipeDto
+import com.mona15.domain.recipe.list.model.Recipe
 
-class RecipeDtoBuilder {
+class RecipeBuilder {
     private var id: String = "COL001"
     private var name: String = "Ajiaco"
     private var ingredients: List<String> = listOf(
@@ -15,13 +15,13 @@ class RecipeDtoBuilder {
     )
     private var urlImage: String = "https://i.ibb.co/zGcGtwh/ajiaco.jpg"
 
-    fun withId(id: String): RecipeDtoBuilder = apply { this.id = id }
+    fun withId(id: String): RecipeBuilder = apply { this.id = id }
 
-    fun withName(name: String): RecipeDtoBuilder = apply { this.name = name }
+    fun withName(name: String): RecipeBuilder = apply { this.name = name }
 
-    fun withIngredients(ingredients: List<String>): RecipeDtoBuilder = apply { this.ingredients = ingredients }
+    fun withIngredients(ingredients: List<String>): RecipeBuilder = apply { this.ingredients = ingredients }
 
-    fun withUrlImage(urlImage: String): RecipeDtoBuilder = apply { this.urlImage = urlImage }
+    fun withUrlImage(urlImage: String): RecipeBuilder = apply { this.urlImage = urlImage }
 
-    fun build(): RecipeDto = RecipeDto(id, name, ingredients, urlImage)
+    fun build(): Recipe = Recipe(id, name, ingredients, urlImage)
 }

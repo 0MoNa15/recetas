@@ -26,7 +26,7 @@ class RecipeListRetrofitRepository(private val recipeApi: RecipeApi) : RecipeLis
             .catch {
                 throw NoDataRecipeException()
             }.map {
-                Mapper.convert(it.recipes)
+                RecipeTranslate.mapRecipesDtoToDomain(it.recipes)
             }
     }
 }

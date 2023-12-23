@@ -1,4 +1,4 @@
-package com.mona15.domain.recipe.list
+package com.mona15.domain.recipe.list.usecase
 
 import com.mona15.domain.recipe.list.model.Builder
 import com.mona15.domain.recipe.list.model.Recipe
