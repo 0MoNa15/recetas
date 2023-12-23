@@ -29,7 +29,7 @@ class RecipeListRetrofitRepositoryUnitTest {
     private lateinit var recipeRepository: RecipeListRetrofitRepository
 
     @Test
-    fun `getAllRecipes() debería devolver una lista de recetas válida`() = runTest {
+    fun `getAllRecipes() exitoso, debería devolver una lista de recetas válida`() = runTest {
         // Arrange
         val recipeDtoList = listOf(
             RecipeDtoBuilder().build(),
@@ -54,7 +54,7 @@ class RecipeListRetrofitRepositoryUnitTest {
 
     @OptIn(ExperimentalCoroutinesApi::class)
     @Test
-    fun `getAllRecipes() debería lanzar un NoDataRecipeException`() = runTest() {
+    fun `getAllRecipes() exception, debería lanzar un NoDataRecipeException`() = runTest() {
 
         // Arrange
         Mockito.`when`(recipeApi.getAllRecipes()).thenAnswer { throw NoDataRecipeException() }
