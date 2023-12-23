@@ -1,7 +1,5 @@
 package com.mona15.domain.recipe.list.model
 
-import com.mona15.domain.recipe.model.Recipe
-
 class RecipeBuilder {
     companion object {
         fun getRecipe(name: String): Recipe {

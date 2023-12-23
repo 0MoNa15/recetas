@@ -37,7 +37,7 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import coil.compose.AsyncImage
-import com.mona15.domain.recipe.model.Recipe
+import com.mona15.domain.recipe.list.model.Recipe
 import com.mona15.recetas.R
 import com.mona15.recetas.recipe.list.view.state.EmptyListView
 import com.mona15.recetas.recipe.list.view.state.NoDataScreen

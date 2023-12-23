@@ -1,4 +1,4 @@
-package com.mona15.domain.recipe.model
+package com.mona15.domain.recipe.list.model
 
 class Recipe(
     val id: String = "",

@@ -1,8 +1,8 @@
 package com.mona15.infraestructure.recipe.list.dependencyinjection
 
-import com.mona15.domain.recipe.repository.RecipeListRepository
-import com.mona15.domain.recipe.usecases.GetAllRecipesUseCase
-import com.mona15.domain.recipe.usecases.GetRecipesByCountryUseCase
+import com.mona15.domain.recipe.list.repository.RecipeListRepository
+import com.mona15.domain.recipe.list.usecases.GetAllRecipesUseCase
+import com.mona15.domain.recipe.list.usecases.GetRecipesByCountryUseCase
 import com.mona15.infraestructure.recipe.list.api.RecipeApi
 import com.mona15.infraestructure.recipe.list.repository.RecipeListRetrofitRepository
 import dagger.Module

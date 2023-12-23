@@ -1,7 +1,7 @@
-package com.mona15.domain.recipe.usecases
+package com.mona15.domain.recipe.list.usecases
 
-import com.mona15.domain.recipe.model.Recipe
-import com.mona15.domain.recipe.repository.RecipeListRepository
+import com.mona15.domain.recipe.list.model.Recipe
+import com.mona15.domain.recipe.list.repository.RecipeListRepository
 import kotlinx.coroutines.flow.Flow
 
 class GetAllRecipesUseCase constructor(private val recipeListRepository: RecipeListRepository) {

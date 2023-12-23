@@ -1,6 +1,6 @@
 package com.mona15.recetas.map.mapper
 
-import com.mona15.domain.recipe.model.Location
+import com.mona15.domain.recipe.detail.model.Location
 import com.mona15.recetas.country.mapper.CountryMapper
 import com.mona15.recetas.map.model.LocationParcelable
 

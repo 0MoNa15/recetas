@@ -1,6 +1,6 @@
-package com.mona15.domain.recipe
+package com.mona15.domain.recipe.detail.repository
 
-import com.mona15.domain.recipe.model.RecipeDetail
+import com.mona15.domain.recipe.detail.model.RecipeDetail
 import kotlinx.coroutines.flow.Flow
 
 interface RecipeDetailRepository {

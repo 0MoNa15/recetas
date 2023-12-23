@@ -1,8 +1,7 @@
 package com.mona15.domain.recipe.detail.model
 
 import com.mona15.domain.recipe.list.model.RecipeBuilder
-import com.mona15.domain.recipe.model.Recipe
-import com.mona15.domain.recipe.model.RecipeDetail
+import com.mona15.domain.recipe.list.model.Recipe
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 

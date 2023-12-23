@@ -6,7 +6,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.mona15.domain.recipe.model.Recipe
+import com.mona15.domain.recipe.list.model.Recipe
 import com.mona15.recetas.recipe.list.viewmodel.RecipeListViewModel
 
 @Composable

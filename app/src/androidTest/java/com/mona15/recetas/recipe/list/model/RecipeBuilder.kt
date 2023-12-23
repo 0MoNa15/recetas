@@ -1,6 +1,6 @@
 package com.mona15.recetas.recipe.list.model
 
-import com.mona15.domain.recipe.model.Recipe
+import com.mona15.domain.recipe.list.model.Recipe
 
 class RecipeBuilder {
     private var id: String = "COL001"

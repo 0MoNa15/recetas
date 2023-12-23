@@ -1,6 +1,6 @@
 package com.mona15.recetas.recipe.list.view.state
 
-import com.mona15.domain.recipe.model.Recipe
+import com.mona15.domain.recipe.list.model.Recipe
 
 data class RecipeListUiState(
     var loading: Boolean = false,

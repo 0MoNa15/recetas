@@ -1,9 +1,9 @@
 package com.mona15.domain.recipe.detail
 
 import com.mona15.domain.recipe.detail.model.Builder
-import com.mona15.domain.recipe.model.RecipeDetail
-import com.mona15.domain.recipe.repository.RecipeListRepository
-import com.mona15.domain.recipe.usecases.GetRecipeDetailUseCase
+import com.mona15.domain.recipe.detail.model.RecipeDetail
+import com.mona15.domain.recipe.detail.usecase.GetRecipeDetailUseCase
+import com.mona15.domain.recipe.list.repository.RecipeListRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert

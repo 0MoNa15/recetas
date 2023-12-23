@@ -1,6 +1,6 @@
 package com.mona15.recetas.map.view.state
 
-import com.mona15.domain.recipe.model.Location
+import com.mona15.domain.recipe.detail.model.Location
 
 data class MapUiState (
     var success: Location,

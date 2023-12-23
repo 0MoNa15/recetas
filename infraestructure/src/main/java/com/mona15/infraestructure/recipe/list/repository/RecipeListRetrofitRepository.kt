@@ -1,8 +1,8 @@
 package com.mona15.infraestructure.recipe.list.repository
 
 import com.mona15.domain.recipe.exceptions.NoDataRecipeException
-import com.mona15.domain.recipe.model.Recipe
-import com.mona15.domain.recipe.repository.RecipeListRepository
+import com.mona15.domain.recipe.list.model.Recipe
+import com.mona15.domain.recipe.list.repository.RecipeListRepository
 import com.mona15.infraestructure.anticorruption.Mapper
 import com.mona15.infraestructure.recipe.list.anticorruption.RecipeTranslate
 import com.mona15.infraestructure.recipe.list.api.RecipeApi

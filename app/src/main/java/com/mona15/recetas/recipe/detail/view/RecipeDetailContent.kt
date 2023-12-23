@@ -2,7 +2,7 @@ package com.mona15.recetas.recipe.detail.view
 
 import androidx.compose.foundation.Image
 import androidx.compose.runtime.Composable
-import com.mona15.domain.recipe.model.RecipeDetail
+import com.mona15.domain.recipe.detail.model.RecipeDetail
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.Button
@@ -24,8 +24,8 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
-import com.mona15.domain.recipe.model.Ingredient
-import com.mona15.domain.recipe.model.Macronutrient
+import com.mona15.domain.recipe.detail.model.Ingredient
+import com.mona15.domain.recipe.detail.model.Macronutrient
 import com.mona15.recetas.R
 import com.mona15.recetas.map.mapper.LocationMapMapper
 import com.mona15.recetas.map.model.LocationParcelable

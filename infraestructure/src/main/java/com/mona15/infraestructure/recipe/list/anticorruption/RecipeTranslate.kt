@@ -1,6 +1,6 @@
 package com.mona15.infraestructure.recipe.list.anticorruption
 
-import com.mona15.domain.recipe.model.Recipe
+import com.mona15.domain.recipe.list.model.Recipe
 import com.mona15.infraestructure.anticorruption.Mapper
 import com.mona15.infraestructure.recipe.list.dto.RecipeDto
 

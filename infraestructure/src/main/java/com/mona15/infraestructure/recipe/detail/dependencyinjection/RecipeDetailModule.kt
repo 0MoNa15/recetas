@@ -1,7 +1,7 @@
 package com.mona15.infraestructure.recipe.detail.dependencyinjection
 
-import com.mona15.domain.recipe.RecipeDetailRepository
-import com.mona15.domain.recipe.usecases.GetRecipeDetailUseCase
+import com.mona15.domain.recipe.detail.repository.RecipeDetailRepository
+import com.mona15.domain.recipe.detail.usecase.GetRecipeDetailUseCase
 import com.mona15.infraestructure.recipe.detail.api.RecipeDetailApi
 import com.mona15.infraestructure.recipe.detail.repository.RecipeDetailRetrofitRepository
 import dagger.Module
