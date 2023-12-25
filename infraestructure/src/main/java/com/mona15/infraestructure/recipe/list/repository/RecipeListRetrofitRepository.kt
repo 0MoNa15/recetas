@@ -9,11 +9,19 @@ import com.mona15.infraestructure.recipe.list.api.RecipeApi
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.last
 import kotlinx.coroutines.flow.map
 
 class RecipeListRetrofitRepository(private val recipeApi: RecipeApi) : RecipeListRepository {
     override fun getAllRecipes(): Flow<List<Recipe>> {
-        return flow { emit(recipeApi.getAllRecipes()) }
+        return flow {
+            val response = recipeApi.getAllRecipes()
+            if (response == null) {
+                throw NoDataRecipeException()
+            } else {
+                emit(response)
+            }
+        }
             .catch {
                 throw NoDataRecipeException()
             }.map {
