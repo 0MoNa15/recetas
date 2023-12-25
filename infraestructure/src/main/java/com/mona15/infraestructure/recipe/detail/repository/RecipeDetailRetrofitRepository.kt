@@ -25,7 +25,6 @@ class RecipeDetailRetrofitRepository(private val recipeDetailApi: RecipeDetailAp
                 .catch {
                     throw NoDataRecipeException()
                 }.map {
-                    //Mapper.convert(it)
                     RecipeDetailTranslate.mapRecipDetailDtoToDomain(it)
 
                 }
