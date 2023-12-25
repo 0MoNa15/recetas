@@ -1,10 +1,6 @@
 package com.mona15.domain.recipe.detail.model
 
 import com.mona15.domain.country.model.Country
-import com.mona15.domain.recipe.detail.model.Ingredient
-import com.mona15.domain.recipe.detail.model.Location
-import com.mona15.domain.recipe.detail.model.Macronutrient
-import com.mona15.domain.recipe.detail.model.RecipeDetail
 
 class RecipeDetailBuilder {
 
@@ -15,7 +11,7 @@ class RecipeDetailBuilder {
                     id = "COL001",
                     name = "Ajiaco",
                     description = "Sopa colombiana espesa y nutritiva.",
-                    image = "https://ibb.co/wMHM21N",
+                    image = "https://i.ibb.co/zGcGtwh/ajiaco.jpg",
                     ingredients = listOf(
                         Ingredient("Papa criolla", 200, "gramos"),
                         Ingredient("Pollo", 300, "gramos"),

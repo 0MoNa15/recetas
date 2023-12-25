@@ -5,6 +5,7 @@ import com.mona15.domain.recipe.detail.model.Ingredient
 import com.mona15.domain.recipe.detail.model.Location
 import com.mona15.domain.recipe.detail.model.Macronutrient
 import com.mona15.domain.recipe.detail.model.RecipeDetail
+import com.mona15.infraestructure.recipe.detail.dto.ResponseRecipeDetailDto
 
 class RecipeDetailBuilder {
     private var id: String = "COL001"

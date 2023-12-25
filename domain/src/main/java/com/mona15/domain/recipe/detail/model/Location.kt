@@ -13,6 +13,24 @@ class Location(
         validations()
     }
 
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (other !is Location) return false
+
+        return latitude == other.latitude &&
+                longitude == other.longitude &&
+                city == other.city &&
+                country == other.country
+    }
+
+    override fun hashCode(): Int {
+        var result = latitude.hashCode()
+        result = 31 * result + longitude.hashCode()
+        result = 31 * result + city.hashCode()
+        result = 31 * result + country.hashCode()
+        return result
+    }
+
     private fun validations() {
         validarLatitud()
         validarLongitud()
