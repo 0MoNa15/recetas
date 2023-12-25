@@ -1,11 +1,14 @@
 package com.mona15.infraestructure.recipe.detail.repository
 
+import com.mona15.domain.recipe.exceptions.NoDataRecipeException
 import com.mona15.infraestructure.recipe.detail.anticorruption.RecipeDetailTranslate
 import com.mona15.infraestructure.recipe.detail.model.ResponseRecipeDetailDtoBuilder
 import com.mona15.infraestructure.recipe.detail.api.RecipeDetailApi
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runTest
 import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.runBlocking
+import org.junit.Assert
 import org.junit.Assert.assertEquals
 import org.junit.runner.RunWith
 import org.mockito.InjectMocks
@@ -40,4 +43,34 @@ class RecipeDetailRetrofitRepositoryUnitTest {
         Mockito.verify(recipeDetailApi).getRecipeDetail(recipeId)
         assertEquals(expectedDomainDetail, result)
     }
+
+    @OptIn(ExperimentalCoroutinesApi::class)
+    @Test
+    fun `getRecipeDetail() con ID nulo, debería lanzar NoDataRecipeException`() = runTest {
+        // Arrange
+        val recipeId: String? = null
+
+        // Act
+        val exceptionResult = Assert.assertThrows(NoDataRecipeException::class.java) {
+            runBlocking {
+                recipeDetailRepository.getRecipeDetail(recipeId).first()
+            }
+        }
+
+        // Assert
+        assertEquals(NoDataRecipeException::class.java, exceptionResult.javaClass)
+    }
+
+    @OptIn(ExperimentalCoroutinesApi::class)
+    @Test(expected = NoDataRecipeException::class)
+    fun `getRecipeDetail() con respuesta nula, debería lanzar NoDataRecipeException`() = runTest {
+        // Arrange
+        val recipeId = "COL001"
+
+        Mockito.`when`(recipeDetailApi.getRecipeDetail(recipeId)).thenReturn(null)
+
+        // Act
+        recipeDetailRepository.getRecipeDetail(recipeId).first()
+    }
+
 }
