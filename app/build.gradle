@@ -26,6 +26,9 @@ android {
     }
 
     buildTypes {
+        debug {
+            testCoverageEnabled true
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
@@ -49,6 +52,14 @@ android {
             excludes += '/META-INF/{AL2.0,LGPL2.1}'
         }
     }
+}
+
+jacoco {
+    toolVersion = "0.8.7"
+}
+
+tasks.withType(Test).configureEach {
+    jacoco.includeNoLocationClasses = true
 }
 
 dependencies {
