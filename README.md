@@ -43,9 +43,18 @@ Esta aplicación te permite descubrir recetas auténticas de Perú y Colombia, c
 
  ## Calidad de código
 
-  - Tener Java 17 en el archivo bash profile -> Mac o en las variables de entorno - >Windows
-  - Para probar las pruebas unitarias: "./gradlew createDebugCoverageReport"
-  - Para ver limpieza de código: "./gradlew lint"
+  - Tener Java 17 en el archivo bash profile -> Mac o en las variables de entorno -> Windows
+  - 
+  - Para probar las pruebas:
+```
+./gradlew jacocoTestReport
+./gradlew createDebugCoverageReport
+```
+
+  - Para ver limpieza de código:
+```
+./gradlew lint
+```
 
 ## Servidores
 
