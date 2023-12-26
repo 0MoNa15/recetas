@@ -6,7 +6,7 @@ ext {
     coreTesting_version = "2.2.0"
     roboelectric_version = "4.5.1"
     mockito_version = "5.1.1"
-    coroutines_version = "1.6.4"
+    coroutines_version = "1.7.3"
     extTest_version = "1.1.5"
     expressoTest_version = "3.5.1"
     runnerTest_version = "1.5.2"
