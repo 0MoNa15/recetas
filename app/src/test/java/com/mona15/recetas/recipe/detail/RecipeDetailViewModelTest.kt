@@ -45,7 +45,7 @@ class RecipeDetailViewModelTest {
             recipeDetailViewModel.getRecipe(recipeId)
 
             //Assert
-            Mockito.verify(getRecipeDetailUseCase, Mockito.times(1)).invoke(recipeId)
+            Mockito.verify(getRecipeDetailUseCase, Mockito.times(1)).invoke("recipeId")
         }
     }
 }
