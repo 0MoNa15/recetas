@@ -3,11 +3,11 @@ package com.mona15.infraestructure.recipe.list.anticorruption
 import com.mona15.domain.recipe.list.model.Recipe
 import com.mona15.infraestructure.recipe.list.dto.RecipeDto
 import com.mona15.infraestructure.recipe.list.dto.ResponseRecipesDto
-import com.mona15.infraestructure.recipe.list.anticorruption.RecipeTranslate
 import org.junit.Assert
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.junit.MockitoJUnitRunner
+
 @RunWith(MockitoJUnitRunner::class)
 class RecipeTranslateTest {
 

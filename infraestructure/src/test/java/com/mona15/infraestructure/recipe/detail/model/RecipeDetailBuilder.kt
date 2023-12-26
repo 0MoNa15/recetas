@@ -11,7 +11,8 @@ class RecipeDetailBuilder {
     private var id: String = "COL001"
     private var name: String = "Ajiaco"
     private var description: String = "Sopa colombiana espesa y nutritiva."
-    private var image: String = "https://ibb.co/wMHM21N"
+    private var image: String = "https://i.ibb.co/zGcGtwh/ajiaco.jpg"
+
     private var ingredients: List<Ingredient> = listOf(
         Ingredient("Papa criolla", 200, "gramos"),
         Ingredient("Pollo", 300, "gramos"),

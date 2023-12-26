@@ -11,8 +11,8 @@ class RecipeDetail(
     val preparationTimeMinutes: Int,
     val slices: Int,
     val difficulty: String,
-    val instructions: List<String>)
-{
+    val instructions: List<String>
+) {
     init {
         validations()
     }

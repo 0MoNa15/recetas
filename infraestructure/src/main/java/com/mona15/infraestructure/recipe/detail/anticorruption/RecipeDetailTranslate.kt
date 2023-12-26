@@ -13,8 +13,8 @@ import com.mona15.infraestructure.recipe.detail.dto.ResponseRecipeDetailDto
 
 class RecipeDetailTranslate {
     companion object {
-        fun mapRecipDetailDtoToDomain(recipeDetailDto: ResponseRecipeDetailDto): RecipeDetail {
-            val recipe =  RecipeDetail(
+        fun mapRecipeDetailDtoToDomain(recipeDetailDto: ResponseRecipeDetailDto): RecipeDetail {
+            return RecipeDetail(
                 id = recipeDetailDto.id,
                 name = recipeDetailDto.name,
                 description = recipeDetailDto.description,
@@ -25,16 +25,15 @@ class RecipeDetailTranslate {
                 preparationTimeMinutes = recipeDetailDto.preparationTimeMinutes,
                 slices = recipeDetailDto.slices,
                 difficulty = recipeDetailDto.difficulty,
-                instructions = recipeDetailDto.instructions)
-
-            return recipe
+                instructions = recipeDetailDto.instructions
+            )
         }
 
         fun mapIngredientsDtoToDomain(ingredientsDto: List<IngredientDto>): List<Ingredient> {
             return ingredientsDto.map { mapIngredientDtoToDomain(it) }
         }
 
-        private fun mapIngredientDtoToDomain(ingredientDto: IngredientDto): Ingredient {
+        fun mapIngredientDtoToDomain(ingredientDto: IngredientDto): Ingredient {
             return Ingredient(
                 name = ingredientDto.name,
                 amount = ingredientDto.amount,

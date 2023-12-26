@@ -25,7 +25,7 @@ class RecipeDetailRetrofitRepository(private val recipeDetailApi: RecipeDetailAp
                 .catch {
                     throw NoDataRecipeException()
                 }.map {
-                    RecipeDetailTranslate.mapRecipDetailDtoToDomain(it)
+                    RecipeDetailTranslate.mapRecipeDetailDtoToDomain(it)
 
                 }
         } else {

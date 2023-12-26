@@ -32,7 +32,7 @@ class RecipeDetailRetrofitRepositoryUnitTest {
         // Arrange
         val recipeId = "COL001"
         val recipeDetailDto = ResponseRecipeDetailDtoBuilder().build()
-        val expectedDomainDetail = RecipeDetailTranslate.mapRecipDetailDtoToDomain(recipeDetailDto)
+        val expectedDomainDetail = RecipeDetailTranslate.mapRecipeDetailDtoToDomain(recipeDetailDto)
 
         Mockito.`when`(recipeDetailApi.getRecipeDetail(recipeId)).thenReturn(recipeDetailDto)
 

@@ -13,12 +13,38 @@ class ResponseRecipeDetailDtoBuilder {
     private var image: String = "https://i.ibb.co/zGcGtwh/ajiaco.jpg"
 
     private var ingredients: List<IngredientDto> = listOf(
-        IngredientDtoBuilder().build(),
-        IngredientDtoBuilder().withName("Pollo")
+        IngredientDtoBuilder()
+            .withName("Papa criolla")
+            .withAmount(200)
+            .withPresentation("gramos")
+            .build(),
+        IngredientDtoBuilder()
+            .withName("Pollo")
             .withAmount(300)
             .withPresentation("gramos")
+            .build(),
+        IngredientDtoBuilder()
+            .withName("Mazorca")
+            .withAmount(1)
+            .withPresentation("unidad")
+            .build(),
+        IngredientDtoBuilder()
+            .withName("Caldo de pollo")
+            .withAmount(1)
+            .withPresentation("litro")
+            .build(),
+        IngredientDtoBuilder()
+            .withName("Alcaparras")
+            .withAmount(50)
+            .withPresentation("gramos")
+            .build(),
+        IngredientDtoBuilder()
+            .withName("Crema de leche")
+            .withAmount(100)
+            .withPresentation("mililitros")
             .build()
     )
+
     private var macronutrients: MacronutrientDto = MacronutrientDtoBuilder().build()
     private var location: LocationDto = LocationDtoBuilder().build()
     private var preparationTimeMinutes: Int = 40

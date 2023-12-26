@@ -4,14 +4,6 @@ class Country(
     val name: String,
     val flag: String)
 {
-    init {
-        validations()
-    }
-
-    private fun validations() {
-        //validateName()
-        //validateFlag()
-    }
 
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
