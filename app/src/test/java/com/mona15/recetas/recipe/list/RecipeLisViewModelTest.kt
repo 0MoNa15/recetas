@@ -3,7 +3,7 @@ package com.mona15.recetas.recipe.list
 import com.mona15.domain.recipe.list.model.Recipe
 import com.mona15.domain.recipe.list.usecases.GetAllRecipesUseCase
 import com.mona15.domain.recipe.list.usecases.GetRecipesByCountryUseCase
-import com.mona15.recetas.recipe.detail.CoroutineTestRule
+import com.mona15.recetas.common.CoroutineTestRule
 import com.mona15.recetas.recipe.list.viewmodel.RecipeListViewModel
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.Flow
