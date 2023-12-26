@@ -26,11 +26,13 @@ Esta aplicación te permite descubrir recetas auténticas de Perú y Colombia, c
   - Google Maps: Integración de mapas para mostrar la ubicación de las recetas.
   - Hilt: Para la inyección de dependencias.
   - Flow: Para el manejo reactivo de datos.
+  - Robolectric
+  - Jacoco
 
 ## Requisitos de Compilación
 
 - **JDK Version:**
-- **Versión de Java:** [JDK17](https://mona15.imgbb.com/](https://www.oracle.com/co/java/technologies/downloads/#jdk17-mac)
+- **Versión de Java:** [JDK17](https://www.oracle.com/co/java/technologies/downloads/#jdk17-mac)
 
 - **SDK Version:**
   - Mínima: 34
@@ -38,6 +40,12 @@ Esta aplicación te permite descubrir recetas auténticas de Perú y Colombia, c
  
   - **Android Studio Version:**
   - Hedgehog | 2023.1.1
+
+ ## Calidad de código
+
+  - Tener Java 17 en el archivo bash profile -> Mac o en las variables de entorno - >Windows
+  - Para probar las pruebas unitarias: "./gradlew testDebugUnitTestCoverage"
+  - Para ver limpieza de código: "./gradlew lint"
 
 ## Servidores
 
