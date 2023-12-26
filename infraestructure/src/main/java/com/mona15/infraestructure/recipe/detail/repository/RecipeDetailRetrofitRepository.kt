@@ -15,14 +15,14 @@ class RecipeDetailRetrofitRepository(private val recipeDetailApi: RecipeDetailAp
     override fun getRecipeDetail(recipeId: String?): Flow<RecipeDetail> {
         return if (recipeId != null) {
             flow {
-                val response = recipeDetailApi.getRecipeDetail(recipeId)
+                val response = recipeDetailApi.getRecipeDetail(recipeId = recipeId)
                 if (response == null) {
                     throw NoDataRecipeException()
                 } else {
                     emit(response)
                 }
             }
-                .catch {
+                .catch { 
                     throw NoDataRecipeException()
                 }.map {
                     RecipeDetailTranslate.mapRecipeDetailDtoToDomain(it)

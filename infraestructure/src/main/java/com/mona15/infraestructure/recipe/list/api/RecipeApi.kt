@@ -7,7 +7,6 @@ import retrofit2.http.Path
 private const val RECIPE_PATH = "/recetaslistacolombiaperu"
 private const val PATH_NAME_COUNTRY = "/nombrepais"
 private const val RECIPE_PATH_BY_COUNTRY = "/recetas/{$PATH_NAME_COUNTRY}"
-private const val PATH_ID_RECIPE = "/idreceta"
 
 interface RecipeApi {
 
