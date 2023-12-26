@@ -7,8 +7,6 @@
     <dimen name="padding_32_dp">32dp</dimen>
     <dimen name="padding_image_not_found">52dp</dimen>
 
-    <dimen name="border">1dp</dimen>
-
     <dimen name="card_corner">15dp</dimen>
     <dimen name="card_elevation">5dp</dimen>
     <dimen name="card_size">200dp</dimen>
@@ -16,6 +14,5 @@
     <dimen name="detail_screen_padding">30dp</dimen>
 
     <dimen name="loading_size">100dp</dimen>
-    <dimen name="font_size_list">16dp</dimen>
 
 </resources>

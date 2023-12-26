@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Recetas</string>
-    <string name="no_data_description">No hay datos</string>
     <string name="search_recipe">Buscar receta por nombre o ingrediente</string>
     <string name="informaci_n_nutricional">Información Nutricional</string>
     <string name="calor_as">Calorías</string>
