@@ -1,67 +1,55 @@
 package com.mona15.infraestructure.recipe.list.anticorruption
 
-import com.mona15.domain.recipe.list.model.Recipe
-import com.mona15.infraestructure.recipe.list.dto.RecipeDto
-import com.mona15.infraestructure.recipe.list.dto.ResponseRecipesDto
-import org.junit.Assert
-import org.junit.Test
-import org.junit.runner.RunWith
+import com.mona15.infraestructure.recipe.list.model.RecipeBuilder
+import com.mona15.infraestructure.recipe.list.model.RecipeDtoBuilder
 import org.mockito.junit.MockitoJUnitRunner
+import org.junit.Assert.assertEquals
+import org.junit.runner.RunWith
+import org.junit.Test
 
 @RunWith(MockitoJUnitRunner::class)
 class RecipeTranslateTest {
 
-    private val recipeTranslate = RecipeTranslate
-
-    private val recipe = Recipe(
-        "COL001",
-        "Ajiaco",
-        listOf(
-            "Papa criolla",
-            "Pollo",
-            "Mazorca",
-            "Caldo de pollo",
-            "Alcaparras",
-            "Crema de leche"
-        ),
-        "https://i.ibb.co/zGcGtwh/ajiaco.jpg"
-    )
-
-    private val recipeDto = RecipeDto(
-        "COL001",
-        "Ajiaco",
-        listOf(
-            "Papa criolla",
-            "Pollo",
-            "Mazorca",
-            "Caldo de pollo",
-            "Alcaparras",
-            "Crema de leche"
-        ),
-        "https://i.ibb.co/zGcGtwh/ajiaco.jpg"
-    )
-
-    private val recipesList = listOf(recipeDto)
-
-    private val recipesDto = ResponseRecipesDto(recipesList)
-
     @Test
-    fun mapRecipe_WhenEntityToDomain_RecipeReturn() {
+    fun `mapRecipeDtoToDomain() debería asignar DTO al dominio`() {
         // Arrange
-        val recipe = recipe
+        val expectedRecipe = RecipeBuilder().build()
+        val recipeDto = RecipeDtoBuilder().build()
+
         // Act
-        val result = recipeTranslate.mapRecipeDtoToDomain(recipeDto)
+        val result = RecipeTranslate.mapRecipeDtoToDomain(recipeDto)
+
         // Assert
-        Assert.assertTrue(result.javaClass == Recipe::class.java)
+        assertEquals(expectedRecipe, result)
     }
 
     @Test
-    fun mapRecipes_WhenRecipesDtoToDomain_RecipesReturn() {
+    fun `mapRecipesDtoToDomain() debería asignar lista de DTOs al dominio`() {
         // Arrange
-        val recipes = recipesDto.recipes
+        val recipeDtoList = listOf(
+            RecipeDtoBuilder().build(),
+            RecipeDtoBuilder()
+                .withId("PER006")
+                .withName("Causa Rellena")
+                .withIngredients(listOf("Papas amarillas", "Ají amarillo", "Limón", "Pollo", "Mayonesa", "Aguacate"))
+                .withUrlImage("https://i.ibb.co/3W319RZ/causa-rellena.jpg")
+                .build()
+        )
+
+        val expectedRecipeList = listOf(
+            RecipeBuilder().build(),
+            RecipeBuilder()
+                .withId("PER006")
+                .withName("Causa Rellena")
+                .withIngredients(listOf("Papas amarillas", "Ají amarillo", "Limón", "Pollo", "Mayonesa", "Aguacate"))
+                .withUrlImage("https://i.ibb.co/3W319RZ/causa-rellena.jpg")
+                .build()
+        )
+
         // Act
-        val result = recipeTranslate.mapRecipesDtoToDomain(recipes)
+        val result = RecipeTranslate.mapRecipesDtoToDomain(recipeDtoList)
+
         // Assert
-        Assert.assertTrue(result.all { it.javaClass == Recipe::class.java })
+        assertEquals(expectedRecipeList, result)
     }
 }
