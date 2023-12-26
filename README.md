@@ -30,7 +30,7 @@ Esta aplicación te permite descubrir recetas auténticas de Perú y Colombia, c
 ## Requisitos de Compilación
 
 - **JDK Version:**
-- **Versión de Java:** [JDK17]([https://mona15.imgbb.com/](https://www.oracle.com/co/java/technologies/downloads/#jdk17-mac))
+- **Versión de Java:** [JDK17](https://mona15.imgbb.com/](https://www.oracle.com/co/java/technologies/downloads/#jdk17-mac)
 
 - **SDK Version:**
   - Mínima: 34
