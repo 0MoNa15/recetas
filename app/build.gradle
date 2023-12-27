@@ -7,7 +7,9 @@ plugins {
     id 'kotlin-parcelize'
     id "org.jetbrains.kotlin.plugin.serialization" version "1.6.10"
 }
-
+jacoco {
+    toolVersion = '0.8.7'
+}
 android {
     namespace 'com.mona15.recetas'
     compileSdk 34
@@ -52,14 +54,24 @@ android {
             excludes += '/META-INF/{AL2.0,LGPL2.1}'
         }
     }
-}
 
-jacoco {
-    toolVersion = "0.8.7"
-}
+    tasks.withType(Test).configureEach {
+        jacoco.includeNoLocationClasses = true
+        jacoco.excludes = ['jdk.internal.*']
+    }
 
-tasks.withType(Test).configureEach {
-    jacoco.includeNoLocationClasses = true
+    tasks.register('jacocoTestReport', JacocoReport) {
+        dependsOn('testDebugUnitTest', ':domain:testDebugUnitTest', ':infraestructure:testDebugUnitTest')
+
+        def domain = project(':domain')
+        def infraestructure = project(':infraestructure')
+
+        sourceDirectories.setFrom(files([fileTree(dir: "${domain.projectDir}/src/main/java"), fileTree(dir: "${infraestructure.projectDir}/src/main/java")]))
+        classDirectories.setFrom(files([fileTree(dir: "${domain.buildDir}/tmp/kotlin-classes/debug"), fileTree(dir: "${infraestructure.buildDir}/tmp/kotlin-classes/debug")]))
+
+        def executionFiles = layout.files(fileTree(dir: "$domain.buildDir", includes: ["jacoco/testDebugUnitTest.exec"]), fileTree(dir: "$infraestructure.buildDir", includes: ["jacoco/testDebugUnitTest.exec"]))
+        executionData.setFrom(executionFiles.asFileTree)
+    }
 }
 
 dependencies {
@@ -84,11 +96,14 @@ dependencies {
     implementation hiltNavigationCompose
 
     // Test
-    testImplementation junit
-    androidTestImplementation extTest
     androidTestImplementation expressoTest
     androidTestImplementation composeTest
+    androidTestImplementation runnerTest
+    androidTestImplementation extTest
+
     debugImplementation composeTestManifest
+    
+    testImplementation junit
     testImplementation coreTesting
     testImplementation mockito
     testImplementation roboelectric
@@ -96,12 +111,13 @@ dependencies {
     testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3"
     testImplementation "io.mockk:mockk:1.12.2"
 
+
     // Coil
     implementation coil
 
     implementation serialization
 
-    //Map
+    // Map
     implementation googlemap_compose
     implementation googlemap_utils
     implementation playservices_gsm

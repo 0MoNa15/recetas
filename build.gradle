@@ -22,7 +22,7 @@ buildscript {
 }
 
 subprojects {
-    configurations.all {
+    configurations.configureEach {
         resolutionStrategy {
             eachDependency { details ->
                 if ('org.jacoco' == details.requested.group) {
